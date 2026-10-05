@@ -205,9 +205,12 @@ export const teamControlData: TeamCategory[] = [
     name: "COMMUNITY",
     status: "ONLINE • 100% TELEMETRY",
     members: [
-      { name: "Vidhi Saxena", role: "Club Captain & Lead Organizer", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80", systemTag: "STATION-LEAD-01", linkedin: "#" },
-      { name: "Sneha Kashyap", role: "Community Evangelist", avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&auto=format&fit=crop&q=80", systemTag: "RELATIONS-NODE", linkedin: "#" },
-      { name: "Ria Mathur", role: "Student Advocate", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80", systemTag: "ADVOCACY-NODE", linkedin: "#" }
+      { name: "Sania Verma", role: "Club Captain & Lead Organizer", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80", systemTag: "STATION-LEAD-01", linkedin: "#" },
+      { name: "Vidhi Saxena", role: "Technical Lead", avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&auto=format&fit=crop&q=80", systemTag: "RELATIONS-NODE", linkedin: "#" },
+      { name: "Mehak", role: "Event Management Lead", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80", systemTag: "ADVOCACY-NODE", linkedin: "#" },
+      { name: "Drishti", role: "Public Relations Lead", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80", systemTag: "ADVOCACY-NODE", linkedin: "#" },
+      { name: "Aneshya Das", role: "Media Lead", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80", systemTag: "ADVOCACY-NODE", linkedin: "#" },
+      { name: "Lavanya Kushwaha", role: "Content Lead", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80", systemTag: "ADVOCACY-NODE", linkedin: "#" }
     ]
   },
   {
