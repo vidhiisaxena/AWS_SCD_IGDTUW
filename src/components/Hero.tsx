@@ -116,7 +116,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegister, onExploreCommunity }
         >
           {/* Primary CTA */}
           <button
-            onClick={onOpenRegister}
+            onClick={()=>(window.location.href = "https://konfhub.com/aws-student-community-day-2026-new-delhi")}
             className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-aws-purple via-purple-600 to-aws-pink text-white font-display font-extrabold text-sm sm:text-base tracking-wider shadow-[0_0_35px_rgba(139,92,246,0.45)] hover:shadow-[0_0_45px_rgba(255,0,122,0.6)] hover:scale-105 transition-all flex items-center justify-center gap-2.5 group"
           >
             <Rocket className="w-5 h-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
@@ -132,43 +132,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegister, onExploreCommunity }
             <span>EXPLORE THE COMMUNITY</span>
             <ArrowDown className="w-4 h-4 text-aws-blue group-hover:translate-y-1 transition-transform" />
           </button>
-        </motion.div>
-
-        {/* 9. FLOATING QUOTE / COMMUNITY MESSAGE CARD */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative max-w-2xl w-full"
-        >
-          <div className="glass-panel rounded-2xl p-6 sm:p-7 relative text-left border border-purple-500/30 shadow-[0_10px_30px_rgba(0,0,0,0.4),0_0_20px_rgba(139,92,246,0.15)] group hover:border-cyan-500/50 transition-all">
-            {/* Top decorative badge */}
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2 text-xs font-mono text-aws-blue">
-                <Quote className="w-4 h-4 rotate-180" />
-                <span className="font-bold tracking-wider uppercase">COMMUNITY PHILOSOPHY</span>
-              </div>
-              <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-[10px] font-mono text-purple-300">
-                <ShieldCheck className="w-3 h-3 text-emerald-400" />
-                <span>OFFICIAL CREED</span>
-              </div>
-            </div>
-
-            {/* Quote content */}
-            <p className="font-display font-bold text-lg sm:text-xl text-white tracking-wide leading-snug mb-3">
-              “Together, we learn. Together, we build. Together, we grow.”
-            </p>
-
-            {/* Quote attribution */}
-            <div className="flex items-center justify-between pt-2 border-t border-slate-800/80">
-              <span className="text-xs sm:text-sm font-mono text-slate-400">
-                — {eventConfig.organizer}
-              </span>
-              <span className="text-[11px] font-mono text-cyan-400 font-semibold">
-                IGDTUW, Delhi
-              </span>
-            </div>
-          </div>
         </motion.div>
 
       </div>
