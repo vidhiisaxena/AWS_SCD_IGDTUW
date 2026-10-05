@@ -4,7 +4,6 @@ import { Calendar, Clock, MapPin, ArrowRight, ArrowDown, Sparkles, Rocket } from
 import { eventConfig } from '../data/eventData';
 
 interface HeroProps {
-  onOpenRegister?: () => void;
   onExploreCommunity: () => void;
 }
 

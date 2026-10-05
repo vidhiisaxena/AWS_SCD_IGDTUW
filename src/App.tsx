@@ -63,12 +63,10 @@ export function App() {
 
           <Navbar
             onOpenArcade={() => setStage('arcade')}
-            onOpenRegister={() => setIsRegisterOpen(true)}
           />
 
           <main className="flex-1 relative z-10">
             <Hero
-              onOpenRegister={() => setIsRegisterOpen(true)}
               onExploreCommunity={scrollToCommunity}
             />
             <Countdown />
