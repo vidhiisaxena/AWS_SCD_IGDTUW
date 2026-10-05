@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #050816;
+  color: #f1f5f9;
+  font-family: 'Plus Jakarta Sans', Inter, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom technical grid background */
+.cosmic-grid {
+  background-image: 
+    linear-gradient(to right, rgba(139, 92, 246, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 92, 246, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.cosmic-grid-fine {
+  background-image: 
+    linear-gradient(to right, rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Glowing glass panels */
+.glass-panel {
+  background: rgba(10, 16, 38, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-interactive {
+  background: rgba(13, 20, 48, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  border-color: rgba(0, 240, 255, 0.5);
+  box-shadow: 0 12px 35px -5px rgba(139, 92, 246, 0.25), 0 0 20px rgba(0, 240, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Gradients */
+.gradient-text-aws {
+  background: linear-gradient(135deg, #00F0FF 0%, #A855F7 50%, #FF007A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-fire {
+  background: linear-gradient(135deg, #FF9900 0%, #FF5722 50%, #FF007A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, #00F0FF 0%, #38BDF8 60%, #818CF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Technical terminal styles */
+.terminal-window {
+  background: rgba(5, 8, 22, 0.85);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.08);
+}
+
+/* Neon Glows */
+.glow-purple {
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.35);
+}
+
+.glow-blue {
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.35);
+}
+
+.glow-pink {
+  box-shadow: 0 0 25px rgba(255, 0, 122, 0.35);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2548;
+  border-radius: 4px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b2d6a;
+}
