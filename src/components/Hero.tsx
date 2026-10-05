@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, ArrowRight, ArrowDown, Sparkles, Rocket, Quote, ShieldCheck } from 'lucide-react';
+import { Calendar, Clock, MapPin, ArrowRight, ArrowDown, Sparkles, Rocket } from 'lucide-react';
 import { eventConfig } from '../data/eventData';
 
 interface HeroProps {
-  onOpenRegister: () => void;
+  onOpenRegister?: () => void;
   onExploreCommunity: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenRegister, onExploreCommunity }) => {
+export const Hero: React.FC<HeroProps> = ({ onExploreCommunity }) => {
   return (
     <section id="home" className="relative min-h-[92vh] pt-32 pb-20 flex flex-col justify-center items-center overflow-hidden">
       {/* Background Subtle Technical Grid */}
