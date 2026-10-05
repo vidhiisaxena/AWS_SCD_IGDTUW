@@ -157,7 +157,7 @@ export const TeamControlRoom: React.FC = () => {
 
                     {/* Links */}
                     <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400">
-                      <span>AWS CLOUD CLUB</span>
+                      <span>AWS STUDENT BUILDER GROUP IGDTUW</span>
                       <div className="flex items-center gap-2">
                         {member.linkedin && (
                           <a

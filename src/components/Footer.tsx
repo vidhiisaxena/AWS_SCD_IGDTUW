@@ -55,10 +55,6 @@ export const Footer: React.FC = () => {
           </span>
         </div>
 
-        <p className="font-mono text-xs sm:text-sm text-cyan-300 uppercase tracking-widest font-semibold mb-8">
-          {eventConfig.tagline}
-        </p>
-
         {/* Social Media Links */}
         <div className="flex items-center gap-4 mb-12">
           <a
@@ -92,15 +88,10 @@ export const Footer: React.FC = () => {
           </a>
         </div>
 
-        {/* Philosophy Motto in Footer */}
-        <p className="font-sans text-xs sm:text-sm text-slate-400 italic max-w-lg mb-8">
-          “{eventConfig.philosophy}”
-        </p>
-
         {/* Bottom Credits & Back to Top */}
         <div className="w-full pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
           <div>
-            Built by the community. Powered by curiosity. ☁️
+            Built with love for the community ☁️
           </div>
 
           <div className="flex items-center gap-4">

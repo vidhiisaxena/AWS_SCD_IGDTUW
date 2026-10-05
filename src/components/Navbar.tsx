@@ -5,10 +5,9 @@ import { eventConfig } from '../data/eventData';
 
 interface NavbarProps {
   onOpenArcade: () => void;
-  onOpenRegister: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenArcade, onOpenRegister }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenArcade }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -26,7 +25,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenArcade, onOpenRegister }) 
     { label: 'Speakers', href: '#speakers' },
     { label: 'Schedule', href: '#schedule' },
     { label: 'Sponsors', href: '#sponsors' },
-    { label: 'Community', href: '#community' },
     { label: 'Venue', href: '#venue' },
     { label: 'FAQ', href: '#faq' },
   ];
@@ -69,9 +67,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenArcade, onOpenRegister }) 
             <span className="font-display font-black text-sm sm:text-base tracking-wider text-white group-hover:text-cyan-300 transition-colors">
               {eventConfig.name}
             </span>
-            <span className="font-mono text-[10px] text-purple-300 tracking-widest uppercase">
-              AWS CLOUD CLUB • IGDTUW
-            </span>
           </div>
         </a>
 
@@ -101,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenArcade, onOpenRegister }) 
 
           {/* Primary CTA: Register Now */}
           <button
-            onClick={onOpenRegister}
+            onClick={()=> (window.location.href = "https://konfhub.com/aws-student-community-day-2026-new-delhi")}
             className="relative group overflow-hidden px-4 py-2 rounded-xl bg-gradient-to-r from-aws-purple to-aws-pink text-white font-display font-bold text-xs tracking-wider shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:shadow-[0_0_25px_rgba(255,0,122,0.5)] transition-all flex items-center gap-1.5"
           >
             <span>REGISTER NOW</span>
@@ -165,8 +160,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenArcade, onOpenRegister }) 
 
                 <button
                   onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenRegister();
+                    window.location.href = "https://konfhub.com/aws-student-community-day-2026-new-delhi";
                   }}
                   className="w-full py-3 rounded-xl bg-gradient-to-r from-aws-purple to-aws-pink text-white font-display font-bold text-xs tracking-wider flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(139,92,246,0.4)]"
                 >

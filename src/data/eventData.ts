@@ -15,7 +15,7 @@ export interface Speaker {
 export interface Sponsor {
   id: string;
   name: string;
-  tier: 'Title Partner' | 'Cloud Partner' | 'Community Partner' | 'Technology Partner';
+  tier: 'Title Partner' | 'Ticketing Partner' | 'Community Partner' | 'Technology Partner';
   tierColor: string;
   description: string;
   iconName: string;
@@ -49,7 +49,7 @@ export const eventConfig = {
   tagline: "For Students, By Students.",
   philosophy: "Together, we learn. Together, we build. Together, we grow.",
   experience: "One Community. Countless Possibilities.",
-  organizer: "AWS Cloud Club, IGDTUW",
+  organizer: "AWS Student Builder Group, IGDTUW",
   institution: "Indira Gandhi Delhi Technical University for Women",
   dateDisplay: "30th October",
   dateSubtext: "30 OCTOBER",
@@ -155,7 +155,7 @@ export const speakersData: Speaker[] = [
 
 export const timelineData = [
   { time: "09:30 AM", marker: "09:30", title: "CHECK-IN & BADGE DEPLOYMENT", detail: "Swag kit distribution, RFID clearance & morning handshake network", category: "REGISTRATION" },
-  { time: "10:00 AM", marker: "10:00", title: "IGNITION KEYNOTE: FOR STUDENTS, BY STUDENTS", detail: "AWS Cloud Club IGDTUW leads and AWS Community Ambassadors welcome the fleet", category: "KEYNOTE" },
+  { time: "10:00 AM", marker: "10:00", title: "IGNITION KEYNOTE: FOR STUDENTS, BY STUDENTS", detail: "AWS SGB IGDTUW leads and AWS Community Ambassadors welcome the fleet", category: "KEYNOTE" },
   { time: "11:00 AM", marker: "11:00", title: "TECHNICAL PAYLOAD SESSIONS 01 & 02", detail: "Dual tracks: Serverless Scale Architecture & Generative AI Agents", category: "TECH DEEP DIVE" },
   { time: "12:30 PM", marker: "12:30", title: "COMMUNITY ORBIT, LUNCH & ARCADE BATTLES", detail: "Networking lunch, live AWS Memory Match & Cloud Crush leaderboard competitions", category: "INTERACTION" },
   { time: "02:00 PM", marker: "14:00", title: "HANDS-ON BUILD LAB & STUDENT SHOWCASE", detail: "Deploy live AWS microservices & observe real student-built capstones", category: "WORKSHOP" },
@@ -174,27 +174,35 @@ export const sponsorsData: Sponsor[] = [
   },
   {
     id: "sp-2",
-    name: "Cloud Native Tech",
-    tier: "Cloud Partner",
+    name: "Kornfhub",
+    tier: "Ticketing Partner",
     tierColor: "from-cyan-400 to-blue-500",
-    description: "Infrastructure monitoring and high-velocity continuous integration tooling.",
-    iconName: "Server"
+    description: "Kornfhub is a cutting-edge platform designed to streamline event management and engagement for student communities.",
+    iconName: "Ticket"
   },
   {
     id: "sp-3",
-    name: "Student Dev Guild",
+    name: "AWS UG Delhi NCR",
     tier: "Community Partner",
     tierColor: "from-purple-400 to-pink-500",
-    description: "National network connecting 40,000+ enthusiastic engineering students.",
-    iconName: "Users"
+    description: "An active regional community for AWS professionals, developers, partners, cloud enthusiasts.",
+    iconName: "Cloud"
   },
   {
     id: "sp-4",
-    name: "DevTool Odyssey",
-    tier: "Technology Partner",
+    name: "Codecrafting",
+    tier: "Community Partner",
     tierColor: "from-emerald-400 to-teal-500",
     description: "Next-generation terminal workflows and secure collaborative cloud sandboxes.",
-    iconName: "Terminal"
+    iconName: "Users"
+  },
+  {
+    id:"sp-5",
+    name:"DevSphere",
+    tier:"Community Partner",
+    tierColor:"from-emerald-400 to-teal-500",
+    description: "Next-generation terminal workflows and secure collaborative cloud sandboxes.",
+    iconName:"Radio"
   }
 ];
 
@@ -268,9 +276,9 @@ export const teamControlData: TeamCategory[] = [
 export const faqData: FAQItem[] = [
   {
     id: "faq-1",
-    command: "> WHAT IS AWS CLOUD CLUB?",
-    question: "What is AWS Cloud Club at IGDTUW?",
-    answer: "AWS Cloud Club, IGDTUW is a peer-to-peer, student-led tech community supported by AWS. We focus on cloud computing, serverless architectures, DevOps, and Generative AI through hands-on hackathons, workshops, and open-source projects.",
+    command: "> WHAT IS AWS STUDENT BUILDER GROUP?",
+    question: "What is AWS Student Builder Group at IGDTUW?",
+    answer: "AWS Student Builder Group, as name suggests, is a peer-to-peer, student-led tech community supported by AWS. We focus on cloud computing, serverless architectures, DevOps, and Generative AI through hands-on hackathons, workshops, and open-source projects.",
     category: "COMMUNITY"
   },
   {
@@ -284,21 +292,21 @@ export const faqData: FAQItem[] = [
     id: "faq-3",
     command: "> DO I NEED AWS EXPERIENCE?",
     question: "Do I need prior AWS or cloud experience to attend?",
-    answer: "Not at all! We have curated talks ranging from beginner fundamentals (Level 100/200) to advanced architectures (Level 300/400). Plus, our hands-on labs and mentor lounges are specifically built to help beginners deploy their first cloud project.",
+    answer: "Not at all! We have curated talks ranging from beginner fundamentals (Level 100/200) to advanced architectures (Level 300/400). ",
     category: "PREREQUISITES"
   },
   {
     id: "faq-4",
-    command: "> IS THE EVENT FREE?",
-    question: "Is AWS Student Community Day free to attend?",
-    answer: "Yes, 100% FREE! Registration is completely free for all verified students, but seats are limited by auditorium capacity. We recommend securing your registration ticket as soon as RSVPs open.",
+    command: "> IS THE EVENT PAID?",
+    question: "Is AWS Student Community Day a paid event?",
+    answer: "Yes, We charge a nominal fees of ₹150. This fee covers the cost of food, swag, and other arrangements. We recommend securing your registration ticket as soon as RSVPs open.",
     category: "TICKETS"
   },
   {
     id: "faq-5",
     command: "> WHAT SHOULD I BRING?",
     question: "What items should I bring on event day?",
-    answer: "Bring your college student ID card (mandatory for campus entry), a fully charged laptop + charger for the hands-on workshops, a notebook or tablet, and plenty of enthusiasm to learn and connect!",
+    answer: "Bring your college student ID card (mandatory for campus entry), a notebook or tablet, and plenty of enthusiasm to learn and connect!",
     category: "LOGISTICS"
   },
   {

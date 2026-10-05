@@ -53,7 +53,7 @@ export const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
         <div className="flex items-center justify-between mb-4 relative z-10">
           <div className="flex items-center gap-1.5 font-mono text-[11px] font-bold text-slate-300 tracking-wider">
             <Radio className="w-3.5 h-3.5 text-aws-blue animate-pulse" />
-            <span>AWS COMMUNITY DAY</span>
+            <span>AWS STUDENT COMMUNITY DAY</span>
           </div>
           <span className="font-mono text-xs font-black text-cyan-400 px-2 py-0.5 rounded bg-space-800 border border-slate-700">
             {speaker.badgeNumber}
@@ -126,7 +126,7 @@ export const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
 
         <div className="p-3.5 rounded-xl bg-space-900/90 border border-slate-800 group-hover:border-slate-700 transition-colors mb-4">
           <span className="font-mono text-[9px] uppercase tracking-widest text-slate-400 block mb-1">
-            KEYNOTE PAYLOAD //
+            KEYNOTE TITLE //
           </span>
           <p className="font-sans font-semibold text-xs sm:text-sm text-slate-200 leading-snug line-clamp-2">
             "{speaker.sessionTitle}"
@@ -172,7 +172,7 @@ export const Speakers: React.FC = () => {
           transition={{ delay: 0.1 }}
           className="font-display font-black text-3xl sm:text-5xl md:text-6xl text-center text-white tracking-tight mb-4"
         >
-          MEET THE <span className="gradient-text-aws">CLOUD CREW</span>
+          MEET THE <span className="gradient-text-aws">THE CREW</span>
         </motion.h2>
 
         <motion.p

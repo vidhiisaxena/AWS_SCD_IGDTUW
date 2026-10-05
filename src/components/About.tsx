@@ -38,9 +38,9 @@ export const About: React.FC = () => {
   ];
 
   const stats = [
-    { label: 'ATTENDEES & BUILDERS', value: '500+', subtext: 'Students across colleges' },
-    { label: 'TECHNICAL SESSIONS', value: '10+', subtext: 'Deep-dive keynotes & labs' },
-    { label: 'CLOUD MENTORS', value: '15+', subtext: 'Industry leaders & heroes' },
+    { label: 'ATTENDEES & BUILDERS', value: '250+', subtext: 'Students across colleges' },
+    { label: 'TECHNICAL SESSIONS', value: '7+', subtext: 'Deep-dive keynotes & labs' },
+    { label: 'CLOUD MENTORS', value: '9+', subtext: 'Industry leaders & heroes' },
     { label: 'STUDENT INITIATIVE', value: '100%', subtext: 'Organized by IGDTUW club' },
   ];
 

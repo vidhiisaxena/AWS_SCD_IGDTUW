@@ -75,13 +75,6 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCommunity }) => {
             <span className="block text-white">AWS STUDENT</span>
             <span className="block gradient-text-aws">COMMUNITY DAY</span>
           </h1>
-
-          {/* Motto */}
-          <div className="inline-block mt-1 mb-8">
-            <span className="font-mono text-sm sm:text-lg uppercase tracking-[0.25em] text-cyan-300 font-bold px-4 py-1.5 rounded-lg bg-cyan-950/40 border border-cyan-500/30">
-              {eventConfig.tagline}
-            </span>
-          </div>
         </motion.div>
 
         {/* Key Event Badges: Date, Time, Venue */}
