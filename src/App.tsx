@@ -24,9 +24,15 @@ export function App() {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
   const scrollToCommunity = () => {
-    const el = document.getElementById('about');
+    const el = document.getElementById('community');
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      const navHeight = 70;
+      const rect = el.getBoundingClientRect();
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      window.scrollTo({
+        top: rect.top + scrollTop - navHeight,
+        behavior: 'smooth'
+      });
     }
   };
 

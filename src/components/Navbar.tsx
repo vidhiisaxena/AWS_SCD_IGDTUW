@@ -20,29 +20,38 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenArcade }) => {
   }, []);
 
   const navLinks = [
-    { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Speakers', href: '#speakers' },
     { label: 'Schedule', href: '#schedule' },
     { label: 'Sponsors', href: '#sponsors' },
+    { label: 'Community', href: '#community' },
     { label: 'Venue', href: '#venue' },
     { label: 'FAQ', href: '#faq' },
   ];
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        const navHeight = 70;
+        const rect = element.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const targetY = rect.top + scrollTop - navHeight;
+        window.scrollTo({
+          top: targetY > 0 ? targetY : 0,
+          behavior: 'smooth'
+        });
+      }
+    }, 150);
   };
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled
-          ? 'bg-space-950/85 backdrop-blur-md border-b border-purple-500/25 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.5)]'
-          : 'bg-transparent py-5'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled || mobileMenuOpen
+          ? 'bg-space-950/95 backdrop-blur-md border-b border-purple-500/25 py-2.5 sm:py-3 shadow-[0_4px_30px_rgba(0,0,0,0.5)]'
+          : 'bg-transparent py-4 sm:py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -63,8 +72,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenArcade }) => {
             </div>
           </div>
 
-          <div className="flex flex-col">
-            <span className="font-display font-black text-sm sm:text-base tracking-wider text-white group-hover:text-cyan-300 transition-colors">
+          <div className="flex flex-col min-w-0">
+            <span className="font-display font-black text-xs sm:text-base tracking-wider text-white group-hover:text-cyan-300 transition-colors truncate max-w-[175px] xs:max-w-[220px] sm:max-w-none">
               {eventConfig.name}
             </span>
           </div>
@@ -131,8 +140,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenArcade }) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-space-950/95 border-b border-purple-500/30 backdrop-blur-xl overflow-hidden px-4 pt-3 pb-6 shadow-2xl"
+            transition={{ duration: 0.25 }}
+            className="lg:hidden bg-space-950/98 border-b border-purple-500/30 backdrop-blur-2xl max-h-[calc(100vh-4.5rem)] overflow-y-auto px-4 pt-3 pb-6 shadow-2xl"
           >
             <div className="flex flex-col space-y-2">
               {navLinks.map((link) => (

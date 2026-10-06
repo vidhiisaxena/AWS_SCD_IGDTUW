@@ -150,7 +150,7 @@ export const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
 
 export const Speakers: React.FC = () => {
   return (
-    <section id="speakers" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    <section id="speakers" className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden scroll-mt-16 sm:scroll-mt-20">
       <div className="absolute inset-0 cosmic-grid opacity-25 pointer-events-none" />
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-[130px] pointer-events-none" />
 

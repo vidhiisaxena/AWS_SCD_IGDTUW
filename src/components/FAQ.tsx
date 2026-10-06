@@ -15,7 +15,7 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto overflow-hidden">
+    <section id="faq" className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto overflow-hidden scroll-mt-16 sm:scroll-mt-20">
       {/* Background Subtle Technical Grid */}
       <div className="absolute inset-0 cosmic-grid opacity-25 pointer-events-none" />
 
