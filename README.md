@@ -26,40 +26,32 @@ Designed around a **cosmic space-tech theme**, this website serves as an interac
 
 ---
 
-## 🚀 Key Highlights & Features
 
-### 1. 🛰️ Cinematic Rocket Launch Telemetry (Preloader)
-- **Interactive Staging Sequence:** Simulates a mission control countdown complete with atmospheric smoke canvas particles, payload telemetry diagnostics, and engine ignition visuals.
-- **Bypass Capability:** Seamless instant-skip option for rapid access without compromising first-time visual impact.
+## 🚀 Website Features
 
-### 2. 🌌 Dual-Gateway Welcome Portal
-- **Forked Exploration:** Provides users with a choice between exploring the full conference site (`ENTER CLOUD`) or diving straight into the built-in mini-games (`LAUNCH CLOUD ARCADE`).
-- **Live Atmosphere:** Animated cosmic starfields, reactive nebulas, and floating space dust.
+- **🚀 Rocket Launch Preloader** — Cinematic rocket launch animation with smoke, telemetry and a skip option.
 
-### 3. 🕹️ Interactive AWS Cloud Arcade Zone
-- **Cloud Match & Trivia Mini-Games:** Interactive playable web games centered around AWS services (S3, Lambda, DynamoDB, EC2, CloudFront, Bedrock).
-- **Gamified Learning:** Real-time scoring, live streak counters, and celebratory confetti effects powered by `canvas-confetti`.
+- **🌌 Interactive Welcome Screen** — Choose between entering the main event website or launching the Cloud Arcade.
 
-### 4. 🎛️ Mission Control Architecture (Community Squadron)
-- **Departmental Command Console:** Switch between flight squadrons (**Community**, **Events**, **Tech**, **Design**, **Outreach**, and **Operations**) to view leads and builders.
-- **Mobile-Optimized Telemetry:** Centered, swipe-friendly single-member console on mobile devices, cutting over 75% of vertical scroll fatigue while keeping full detail accessible.
+- **🕹️ Cloud Arcade** — Access two AWS-themed games:
+  - [AWS Memory Match](https://aws-match-game.vercel.app/)
+  - [AWS Cloud Crush](https://aws-candy-game.vercel.app/index.html)
 
-### 5. 🧑‍🚀 Flight Crew & Keynotes (Speakers)
-- **Holographic Speaker Badges:** Collectible flight card visuals showcasing AWS Heroes, architects, and community leaders.
-- **Topic Deep Dives:** Displays talk categories, company associations, and social coordinates.
+- **⏱️ Live Countdown** — Dynamic countdown to the event.
 
-### 6. ⏱️ Mission Timeline & Launch Chronometer
-- **Precision Countdown Timer:** Dynamic clock ticking down to liftoff day with auto-status switches upon ignition.
-- **Trackable Schedule:** Chronological sessions covering keynote inaugurations, live deployment labs, architectural teardowns, and networking lunches.
+- **🧑‍🚀 Speaker Cards** — Interactive speaker cards with event and session information.
 
-### 7. 🪐 Alliance Fleet (Sponsors Orbit)
-- **Planetary Orbit Showcase:** Desktop circular orbit diagram centering on the AWS core engine.
-- **Touch-Friendly Mobile Slider:** Responsive card slider on mobile screens with drag gestures, Prev/Next buttons, and centered pagination dots.
+- **🛰️ Mission Timeline** — Visual timeline for the event schedule.
 
-### 8. 🗺️ Navigation Beacon & FAQ Terminal
-- **Interactive Campus Routing:** Campus transit details (Metro lines, rail hubs, and airport connectivity) with rapid Google Maps navigation.
-- **Terminal-Style FAQ Accordion:** Linux shell prompt-styled interactive accordion addressing ticketing, swags, prerequisites, and perks.
+- **🪐 Sponsor Showcase** — Animated sponsor/partner presentation with responsive layouts.
 
+- **🎛️ Community Control Room** — Interactive interface to explore the organizing team by department.
+
+- **📍 Venue & Navigation** — Event venue information with navigation support.
+
+- **❓ Interactive FAQ** — Expandable FAQ section for attendee information.
+
+- **📱 Responsive Design** — Optimized for desktop, tablet and mobile devices.
 ---
 
 ## 🛠️ Technology Stack
@@ -81,43 +73,42 @@ Designed around a **cosmic space-tech theme**, this website serves as an interac
 AWS_Community_Day_website/
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml           # Automated CI/CD deployment to GitHub Pages
-├── public/                      # Static assets & favicon icons
+│       └── deploy.yml          
+├── public/                      
 ├── src/
 │   ├── components/
-│   │   ├── About.tsx            # Summit philosophy, pillars & live statistics
-│   │   ├── BrandIcons.tsx       # Custom SVG vectors (LinkedIn, GitHub)
-│   │   ├── CloudArcade.tsx      # Interactive browser-based cloud games
-│   │   ├── Countdown.tsx        # Live event launch timer
-│   │   ├── FAQ.tsx              # Shell terminal accordion for questions
-│   │   ├── Footer.tsx           # Footer with AWS brand links & telemetry
-│   │   ├── Hero.tsx             # Main hero section with call-to-actions
-│   │   ├── Navbar.tsx           # Fixed blur navigation with mobile drawer
-│   │   ├── RegistrationModal.tsx# Quick RSVP modal wrapper
-│   │   ├── RocketLoader.tsx     # Cinematic interactive canvas preloader
-│   │   ├── ScheduleTimeline.tsx # Conference mission agenda
-│   │   ├── Speakers.tsx         # Speaker cards with flight badge aesthetics
-│   │   ├── Sponsors.tsx         # Partner orbit and mobile slider
-│   │   ├── StarField.tsx        # Dynamic canvas starfield backdrop
-│   │   ├── TeamControlRoom.tsx  # Mission control squad console
-│   │   ├── Venue.tsx            # Venue details & transit guides
-│   │   └── WelcomeScreen.tsx    # Dual-choice gateway experience
+│   │   ├── About.tsx            
+│   │   ├── BrandIcons.tsx      
+│   │   ├── CloudArcade.tsx      
+│   │   ├── Countdown.tsx        
+│   │   ├── FAQ.tsx              
+│   │   ├── Footer.tsx          
+│   │   ├── Hero.tsx             
+│   │   ├── Navbar.tsx          
+│   │   ├── RegistrationModal.tsx
+│   │   ├── RocketLoader.tsx    
+│   │   ├── ScheduleTimeline.tsx 
+│   │   ├── Speakers.tsx         
+│   │   ├── Sponsors.tsx         
+│   │   ├── StarField.tsx        
+│   │   ├── TeamControlRoom.tsx 
+│   │   ├── Venue.tsx            
+│   │   └── WelcomeScreen.tsx    
 │   ├── data/
-│   │   └── eventData.ts         # Centralized configuration & schedule content
-│   ├── App.tsx                  # Stage manager & root layout
-│   ├── index.css                # Custom neon glows, scrollbars & grid utilities
-│   └── main.tsx                 # React DOM mount point
-├── package.json                 # Project dependencies & scripts
-├── tailwind.config.js           # Cosmic theme palette & typography extensions
-└── vite.config.ts               # Base path and compiler configuration
+│   │   └── eventData.ts         
+│   ├── App.tsx                  
+│   ├── index.css                
+│   └── main.tsx                 
+├── package.json                 
+├── tailwind.config.js          
+└── vite.config.ts               
 ```
-
 ---
 
 
 <div align="center">
 
-Made with 💜 and ☁️ by the **AWS Student Builder Group IGDTUW**
+Designed with 💜 by **Vidhi Saxena**
 
 [⭐ Star this Repository](https://github.com/vidhiisaxena/AWS_SCD_IGDTUW) • [Report an Issue](https://github.com/vidhiisaxena/AWS_SCD_IGDTUW/issues)
 
