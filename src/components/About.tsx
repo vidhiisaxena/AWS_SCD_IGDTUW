@@ -45,7 +45,7 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    <section id="about" className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden scroll-mt-16 sm:scroll-mt-20">
       {/* Background Subtle Technical Grid */}
       <div className="absolute inset-0 cosmic-grid opacity-25 pointer-events-none" />
 
@@ -83,7 +83,7 @@ export const About: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="max-w-3xl text-center mb-16"
+          className="max-w-3xl text-center mb-8 md:mb-16"
         >
           <p className="font-display font-bold text-xl sm:text-2xl gradient-text-aws mb-4">
             “{eventConfig.philosophy}”
@@ -96,8 +96,8 @@ export const About: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* 3 Core Interactive Pillar Cards: LEARN, BUILD, GROW */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl mb-16">
+        {/* 3 Core Interactive Pillar Cards: LEARN, BUILD, GROW (Omitted on mobile view only) */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6 w-full max-w-6xl mb-16">
           {pillars.map((pillar, index) => {
             const Icon = pillar.icon;
             return (
