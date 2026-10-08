@@ -169,10 +169,10 @@ export const TeamControlRoom: React.FC = () => {
                             setMobileMemberIdx(mobileMemberIdx - 1);
                           }
                         }}
-                        className="w-full max-w-[280px] mx-auto rounded-3xl p-3 bg-space-850/95 border border-slate-700/80 shadow-xl flex flex-col items-center text-center"
+                        className="w-full max-w-[210px] mx-auto rounded-2xl p-2.5 bg-space-850/95 border border-slate-700/80 shadow-lg flex flex-col items-center text-center"
                       >
                         {/* Photo fitting top width with rounded corners */}
-                        <div className="w-full aspect-square rounded-2xl overflow-hidden mb-3 shadow-md bg-space-900 border border-purple-500/20">
+                        <div className="w-full aspect-square rounded-xl overflow-hidden mb-2 shadow-sm bg-space-900 border border-purple-500/20">
                           <img
                             src={member.avatar}
                             alt={member.name}
@@ -181,23 +181,23 @@ export const TeamControlRoom: React.FC = () => {
                         </div>
 
                         {/* Name & Position */}
-                        <h4 className="font-display font-bold text-base text-white">
+                        <h4 className="font-display font-bold text-sm text-white">
                           {member.name}
                         </h4>
-                        <p className="font-sans text-xs text-slate-400 font-medium mt-0.5">
+                        <p className="font-sans text-[11px] text-slate-400 font-medium mt-0.5 line-clamp-1">
                           {member.role}
                         </p>
 
                         {/* MEET [NAME] Pill Button */}
-                        <div className="mt-3 flex items-center justify-center gap-2">
+                        <div className="mt-2.5 flex items-center justify-center gap-1.5">
                           <a
                             href={member.linkedin || "#"}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center justify-center gap-1.5 px-4 py-1.5 rounded-full border border-slate-700 hover:border-cyan-400 bg-space-900/80 text-xs font-mono text-slate-300 hover:text-white transition-all shadow-sm"
+                            className="inline-flex items-center justify-center gap-1 px-3 py-1 rounded-full border border-slate-700 hover:border-cyan-400 bg-space-900/80 text-[10px] font-mono text-slate-300 hover:text-white transition-all shadow-sm"
                             aria-label={`Connect with ${member.name} on LinkedIn`}
                           >
-                            <LinkedinIcon className="w-3.5 h-3.5 text-cyan-400" />
+                            <LinkedinIcon className="w-3 h-3 text-cyan-400" />
                             <span className="uppercase tracking-wider font-semibold">
                               MEET {firstName}
                             </span>
@@ -207,10 +207,10 @@ export const TeamControlRoom: React.FC = () => {
                               href={member.github}
                               target="_blank"
                               rel="noreferrer"
-                              className="p-1.5 rounded-full border border-slate-700 hover:border-cyan-400 bg-space-900/80 text-slate-400 hover:text-white transition-colors"
+                              className="p-1 rounded-full border border-slate-700 hover:border-cyan-400 bg-space-900/80 text-slate-400 hover:text-white transition-colors"
                               aria-label={`${member.name} GitHub`}
                             >
-                              <GithubIcon className="w-3.5 h-3.5" />
+                              <GithubIcon className="w-3 h-3" />
                             </a>
                           )}
                         </div>
@@ -221,7 +221,7 @@ export const TeamControlRoom: React.FC = () => {
               </div>
 
               {/* Centered Dot Indicators */}
-              <div className="flex items-center justify-center gap-1.5 mt-3">
+              <div className="flex items-center justify-center gap-1.5 mt-2.5">
                 {activeCategory.members.map((_, idx) => (
                   <button
                     key={idx}
@@ -246,17 +246,17 @@ export const TeamControlRoom: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -15 }}
                   transition={{ duration: 0.25 }}
-                  className="grid grid-cols-2 md:grid-cols-3 gap-5"
+                  className="flex flex-wrap justify-center gap-4 sm:gap-5 max-w-4xl mx-auto"
                 >
                   {activeCategory.members.map((member) => {
                     const firstName = member.name.split(' ')[0];
                     return (
                       <div
                         key={member.name}
-                        className="p-3.5 rounded-3xl bg-space-850/80 border border-slate-800 hover:border-cyan-400/50 hover:shadow-[0_12px_30px_rgba(0,0,0,0.5)] transition-all group flex flex-col items-center text-center overflow-hidden"
+                        className="w-[185px] sm:w-[200px] p-2.5 sm:p-3 rounded-2xl bg-space-850/80 border border-slate-800 hover:border-cyan-400/50 hover:shadow-[0_10px_25px_rgba(0,0,0,0.5)] transition-all group flex flex-col items-center text-center overflow-hidden"
                       >
                         {/* Top Photo with Rounded Corners */}
-                        <div className="w-full aspect-square rounded-2xl overflow-hidden mb-3.5 shadow-md bg-space-900 border border-purple-500/20 group-hover:border-cyan-400/40 transition-colors">
+                        <div className="w-full aspect-square rounded-xl overflow-hidden mb-2.5 shadow-sm bg-space-900 border border-purple-500/20 group-hover:border-cyan-400/40 transition-colors">
                           <img
                             src={member.avatar}
                             alt={member.name}
@@ -265,23 +265,23 @@ export const TeamControlRoom: React.FC = () => {
                         </div>
 
                         {/* Name & Position */}
-                        <h4 className="font-display font-bold text-base sm:text-lg text-white group-hover:text-cyan-300 transition-colors">
+                        <h4 className="font-display font-bold text-sm sm:text-base text-white group-hover:text-cyan-300 transition-colors leading-snug">
                           {member.name}
                         </h4>
-                        <p className="font-sans text-xs sm:text-sm text-slate-400 font-medium mt-0.5">
+                        <p className="font-sans text-[11px] sm:text-xs text-slate-400 font-medium mt-0.5 line-clamp-1">
                           {member.role}
                         </p>
 
                         {/* MEET [NAME] Pill Button */}
-                        <div className="mt-3.5 flex items-center justify-center gap-2">
+                        <div className="mt-2.5 flex items-center justify-center gap-1.5">
                           <a
                             href={member.linkedin || "#"}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center justify-center gap-1.5 px-4 py-1.5 rounded-full border border-slate-700/80 hover:border-cyan-400 bg-space-900/70 hover:bg-space-800 text-xs font-mono text-slate-300 hover:text-white transition-all shadow-sm group/btn"
+                            className="inline-flex items-center justify-center gap-1 px-3 py-1 rounded-full border border-slate-700/80 hover:border-cyan-400 bg-space-900/70 hover:bg-space-800 text-[10px] sm:text-[11px] font-mono text-slate-300 hover:text-white transition-all shadow-sm group/btn"
                             aria-label={`Connect with ${member.name} on LinkedIn`}
                           >
-                            <LinkedinIcon className="w-3.5 h-3.5 text-cyan-400 group-hover/btn:scale-110 transition-transform" />
+                            <LinkedinIcon className="w-3 h-3 text-cyan-400 group-hover/btn:scale-110 transition-transform" />
                             <span className="uppercase tracking-wider font-semibold">
                               MEET {firstName}
                             </span>
@@ -291,10 +291,10 @@ export const TeamControlRoom: React.FC = () => {
                               href={member.github}
                               target="_blank"
                               rel="noreferrer"
-                              className="p-1.5 rounded-full border border-slate-700/80 hover:border-cyan-400 bg-space-900/70 hover:bg-space-800 text-slate-400 hover:text-white transition-all"
+                              className="p-1 rounded-full border border-slate-700/80 hover:border-cyan-400 bg-space-900/70 hover:bg-space-800 text-slate-400 hover:text-white transition-all"
                               aria-label={`${member.name} GitHub`}
                             >
-                              <GithubIcon className="w-3.5 h-3.5" />
+                              <GithubIcon className="w-3 h-3" />
                             </a>
                           )}
                         </div>
