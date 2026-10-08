@@ -4,6 +4,17 @@ import mehakImg from '../assets/Mehak.jpeg';
 import aneshyaImg from '../assets/Aneshya.jpeg';
 import lavanyaImg from '../assets/lavanya.png';
 
+import dipaliImg from '../assets/speakers/dipali.jpeg';
+import rajatImg from '../assets/speakers/rajat.jpeg';
+import ashishImg from '../assets/speakers/ashish.png';
+import varshaImg from '../assets/speakers/varsha.jpeg';
+import nileshImg from '../assets/speakers/ilesh.jpeg';
+import dimpleImg from '../assets/speakers/dimple.jpeg';
+import sumitImg from '../assets/speakers/sumit.png';
+import vridhiImg from '../assets/speakers/Vriddhi.jpeg';
+import satinderImg from '../assets/speakers/satinder.jpeg';
+import dikshaImg from '../assets/speakers/diksha.png';
+
 export interface Speaker {
   id: string;
   name: string;
@@ -112,7 +123,7 @@ export const speakersData: Speaker[] = [
     company: "NatWest Group • AWS Hero",
     sessionTitle: "TBA",
     accentColor: "purple",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80",
+    avatar: dipaliImg,
     socials: { linkedin: "https://www.linkedin.com/in/dipalik/" }
   },
   {
@@ -122,7 +133,7 @@ export const speakersData: Speaker[] = [
     company: "AWS Community Builder",
     sessionTitle: "TBA",
     accentColor: "blue",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+    avatar: rajatImg,
     socials: { linkedin: "https://www.linkedin.com/in/arora-rajat-cw/" }
   },
   {
@@ -132,7 +143,7 @@ export const speakersData: Speaker[] = [
     company: "AWS Ambassador & Community Builder",
     sessionTitle: "AI Adoption with Kiro",
     accentColor: "orange",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80",
+    avatar: ashishImg,
     socials: { linkedin: "https://www.linkedin.com/in/ashish-kasaudhan-713a4225/" }
   },
   {
@@ -142,7 +153,7 @@ export const speakersData: Speaker[] = [
     company: "Accenture • AWS Community Builder",
     sessionTitle: "TBA",
     accentColor: "pink",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80",
+    avatar: varshaImg,
     socials: { linkedin: "https://www.linkedin.com/in/varsha-verma-cloud-devops/" }
   },
   {
@@ -152,7 +163,7 @@ export const speakersData: Speaker[] = [
     company: "Electromech Cloud • AWS Hero",
     sessionTitle: "Getting started robotics on AWS",
     accentColor: "purple",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+    avatar: nileshImg,
     socials: { linkedin: "https://www.linkedin.com/in/nilesh-vaghela/" }
   },
   {
@@ -162,7 +173,7 @@ export const speakersData: Speaker[] = [
     company: "CloudKida • AWS Hero",
     sessionTitle: "TBA",
     accentColor: "blue",
-    avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&auto=format&fit=crop&q=80",
+    avatar: dimpleImg,
     socials: { linkedin: "https://www.linkedin.com/in/dimple-vaghela-ba45447b/" }
   },
   {
@@ -172,7 +183,7 @@ export const speakersData: Speaker[] = [
     company: "AWS Community Builder",
     sessionTitle: "TBA",
     accentColor: "orange",
-    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
+    avatar: sumitImg,
     socials: { linkedin: "https://www.linkedin.com/in/sumit-grover-29a277256/" }
   },
   {
@@ -182,7 +193,7 @@ export const speakersData: Speaker[] = [
     company: "AWS User Group Delhi NCR",
     sessionTitle: "TBA",
     accentColor: "pink",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
+    avatar: vridhiImg,
     socials: { linkedin: "https://www.linkedin.com/in/vridhi-duggal-060682275/" }
   },
   {
@@ -192,7 +203,7 @@ export const speakersData: Speaker[] = [
     company: "Amazon Web Services (AWS)",
     sessionTitle: "TBA",
     accentColor: "purple",
-    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop&q=80",
+    avatar: satinderImg,
     socials: { linkedin: "https://www.linkedin.com/in/satinder-singh-1678b73/" }
   },
   {
@@ -202,7 +213,7 @@ export const speakersData: Speaker[] = [
     company: "HPE • Tech Mentor",
     sessionTitle: "Building Production-Ready GenAI Applications on AWS with Amazon Bedrock and Kubernetes",
     accentColor: "blue",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop&q=80",
+    avatar: dikshaImg,
     socials: { linkedin: "https://www.linkedin.com/in/dikshaverma01428" }
   }
 ];
@@ -274,7 +285,11 @@ export const teamControlData: TeamCategory[] = [
       { name: "Aneshya Das", role: "Media Lead", avatar: aneshyaImg, systemTag: "ADVOCACY-NODE", linkedin: "https://in.linkedin.com/in/aneshya-das-153a91317" },
       { name: "Lavanya Kushwaha", role: "Content Lead", avatar: lavanyaImg, systemTag: "ADVOCACY-NODE", linkedin: "https://in.linkedin.com/in/laavanya-kushwaha-5748a5291" }
     ]
-  },
+  }
+];
+
+// Preserved placeholder departments (hidden from display until real member data is updated)
+export const upcomingTeamDepartments: TeamCategory[] = [
   {
     id: "cat-events",
     code: "02",

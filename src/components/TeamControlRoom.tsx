@@ -53,7 +53,9 @@ export const TeamControlRoom: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="text-slate-300 text-xs sm:text-base font-sans max-w-xl text-center mb-6 sm:mb-12"
         >
-          Interactive Cloud Control Room. Select a flight department below to inspect organizing squad nodes and real-time operations telemetry.
+          {teamControlData.length > 1
+            ? "Interactive Cloud Control Room. Select a flight department below to inspect organizing squad nodes and real-time operations telemetry."
+            : "Interactive Cloud Control Room. Meet the organizing squad nodes and student leaders behind AWS Student Community Day IGDTUW."}
         </motion.p>
 
         {/* Command Center Console Main Frame */}

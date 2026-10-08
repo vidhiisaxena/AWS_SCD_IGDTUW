@@ -4,6 +4,7 @@ import { Radio, Sparkles } from 'lucide-react';
 import { LinkedinIcon } from './BrandIcons';
 import { type Speaker, speakersData } from '../data/eventData';
 
+
 interface SpeakerCardProps {
   speaker: Speaker;
   index: number;
@@ -140,10 +141,6 @@ export const Speakers: React.FC = () => {
               <SpeakerCard speaker={speaker} index={index} />
             </div>
           ))}
-        </div>
-
-        <div className="md:hidden mt-4 text-xs font-mono text-slate-400 flex items-center gap-1.5">
-          <span>← Swipe horizontally to explore speakers →</span>
         </div>
       </div>
     </section>
