@@ -6,16 +6,16 @@ import lavanyaImg from '../assets/lavanya.png';
 
 export interface Speaker {
   id: string;
-  badgeNumber: string;
   name: string;
   role: string;
   company: string;
   sessionTitle: string;
-  tag: string;
   avatar: string;
   accentColor: 'purple' | 'blue' | 'pink' | 'orange';
+  badgeNumber?: string;
+  tag?: string;
   metrics?: { label: string; value: string }[];
-  socials?: { twitter?: string; linkedin?: string; github?: string };
+  socials?: { linkedin?: string; twitter?: string; github?: string };
 }
 
 export interface Sponsor {
@@ -106,56 +106,104 @@ export const arcadeGames = [
 
 export const speakersData: Speaker[] = [
   {
-    id: "spk-01",
-    badgeNumber: "SPEAKER #01",
+    id: "spk-dipali",
     name: "Dipali Kulshrestha",
-    role: "Senior Cloud Solutions Architect",
-    company: "AWS Community Hero",
-    sessionTitle: "Architecting Resilient Multi-Region Clouds at Scale",
-    tag: "CLOUD INFRA",
+    role: "VP of Data Engineering",
+    company: "NatWest Group • AWS Hero",
+    sessionTitle: "TBA",
     accentColor: "purple",
     avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80",
-    metrics: [{ label: "LEVEL", value: "300" }, { label: "STACK", value: "AWS CDK & ECS" }],
-    socials: { linkedin: "https://linkedin.com", twitter: "https://twitter.com" }
+    socials: { linkedin: "https://www.linkedin.com/in/dipalik/" }
   },
   {
-    id: "spk-02",
-    badgeNumber: "SPEAKER #02",
-    name: "Rohan Varma",
-    role: "AI/ML Systems Researcher",
-    company: "Amazon Bedrock Pioneer",
-    sessionTitle: "Building Autonomous Agentic Workflows with Bedrock & Lambda",
-    tag: "GEN AI",
+    id: "spk-rajat",
+    name: "Rajat Arora",
+    role: "Cloud & DevOps Specialist",
+    company: "AWS Community Builder",
+    sessionTitle: "TBA",
     accentColor: "blue",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
-    metrics: [{ label: "LEVEL", value: "400" }, { label: "STACK", value: "Amazon Bedrock" }],
-    socials: { linkedin: "https://linkedin.com", github: "https://github.com" }
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+    socials: { linkedin: "https://www.linkedin.com/in/arora-rajat-cw/" }
   },
   {
-    id: "spk-03",
-    badgeNumber: "SPEAKER #03",
-    name: "Dr. Priyam Sen",
-    role: "Cloud Security Evangelist",
-    company: "DevSecOps Guild",
-    sessionTitle: "Zero-Trust Cloud Governance for Fast-Moving Startups",
-    tag: "SECURITY",
+    id: "spk-ashish",
+    name: "Ashish Kasaudhan",
+    role: "DevSecOps Architect",
+    company: "AWS Ambassador & Community Builder",
+    sessionTitle: "AI Adoption with Kiro",
+    accentColor: "orange",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80",
+    socials: { linkedin: "https://www.linkedin.com/in/ashish-kasaudhan-713a4225/" }
+  },
+  {
+    id: "spk-varsha",
+    name: "Varsha Verma",
+    role: "Lead Cloud Engineer",
+    company: "Accenture • AWS Community Builder",
+    sessionTitle: "TBA",
     accentColor: "pink",
     avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80",
-    metrics: [{ label: "LEVEL", value: "300" }, { label: "STACK", value: "IAM & GuardDuty" }],
-    socials: { linkedin: "https://linkedin.com", twitter: "https://twitter.com" }
+    socials: { linkedin: "https://www.linkedin.com/in/varsha-verma-cloud-devops/" }
   },
   {
-    id: "spk-04",
-    badgeNumber: "SPEAKER #04",
-    name: "Kabir Malhotra",
-    role: "Founding Engineer & Student Builder",
-    company: "AWS Cloud Captain Alumni",
-    sessionTitle: "From University Dorm to 1M Serverless Invocations",
-    tag: "STUDENT BUILDER",
+    id: "spk-nilesh",
+    name: "Nilesh Vaghela",
+    role: "Founder & CEO",
+    company: "Electromech Cloud • AWS Hero",
+    sessionTitle: "Getting started robotics on AWS",
+    accentColor: "purple",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+    socials: { linkedin: "https://www.linkedin.com/in/nilesh-vaghela/" }
+  },
+  {
+    id: "spk-dimple",
+    name: "Dimple Vaghela",
+    role: "Co-Founder",
+    company: "CloudKida • AWS Hero",
+    sessionTitle: "TBA",
+    accentColor: "blue",
+    avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&auto=format&fit=crop&q=80",
+    socials: { linkedin: "https://www.linkedin.com/in/dimple-vaghela-ba45447b/" }
+  },
+  {
+    id: "spk-sumit",
+    name: "Sumit Grover",
+    role: "Cloud Security & Infrastructure Specialist",
+    company: "AWS Community Builder",
+    sessionTitle: "TBA",
     accentColor: "orange",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
-    metrics: [{ label: "LEVEL", value: "200" }, { label: "STACK", value: "DynamoDB & S3" }],
-    socials: { linkedin: "https://linkedin.com", github: "https://github.com" }
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
+    socials: { linkedin: "https://www.linkedin.com/in/sumit-grover-29a277256/" }
+  },
+  {
+    id: "spk-vridhi",
+    name: "Vridhi Duggal",
+    role: "Software Developer & Cloud Builder",
+    company: "AWS User Group Delhi NCR",
+    sessionTitle: "TBA",
+    accentColor: "pink",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
+    socials: { linkedin: "https://www.linkedin.com/in/vridhi-duggal-060682275/" }
+  },
+  {
+    id: "spk-satinder",
+    name: "Satinder Singh",
+    role: "Director of Solutions Architecture",
+    company: "Amazon Web Services (AWS)",
+    sessionTitle: "TBA",
+    accentColor: "purple",
+    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop&q=80",
+    socials: { linkedin: "https://www.linkedin.com/in/satinder-singh-1678b73/" }
+  },
+  {
+    id: "spk-diksha",
+    name: "Diksha Verma",
+    role: "Cloud & GenAI Engineer",
+    company: "HPE • Tech Mentor",
+    sessionTitle: "Building Production-Ready GenAI Applications on AWS with Amazon Bedrock and Kubernetes",
+    accentColor: "blue",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop&q=80",
+    socials: { linkedin: "https://www.linkedin.com/in/dikshaverma01428" }
   }
 ];
 
