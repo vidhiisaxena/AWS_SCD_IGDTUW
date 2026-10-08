@@ -3,6 +3,7 @@ import vidhiImg from '../assets/vidhi.jpeg';
 import mehakImg from '../assets/Mehak.jpeg';
 import aneshyaImg from '../assets/Aneshya.jpeg';
 import lavanyaImg from '../assets/lavanya.png';
+import drishtiImg from '../assets/drishti.jpeg';
 
 import dipaliImg from '../assets/speakers/dipali.jpeg';
 import rajatImg from '../assets/speakers/rajat.jpeg';
@@ -281,7 +282,7 @@ export const teamControlData: TeamCategory[] = [
       { name: "Sania Verma", role: "President", avatar: saniaImg, systemTag: "STATION-LEAD-01", linkedin: "https://www.linkedin.com/in/sania-verma-21a642291/" },
       { name: "Vidhi Saxena", role: "Technical Lead", avatar: vidhiImg, systemTag: "RELATIONS-NODE", linkedin: "https://in.linkedin.com/in/vidhi-saxena-86150a243" },
       { name: "Mehak", role: "Event Management Lead", avatar: mehakImg, systemTag: "ADVOCACY-NODE", linkedin: "https://in.linkedin.com/in/mehak-76677a288" },
-      { name: "Drishti", role: "Public Relations Lead", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80", systemTag: "ADVOCACY-NODE", linkedin: "#" },
+      { name: "Drishti", role: "Public Relations Lead", avatar: drishtiImg, systemTag: "ADVOCACY-NODE", linkedin: "https://in.linkedin.com/in/drishti-chaudhary" },
       { name: "Aneshya Das", role: "Media Lead", avatar: aneshyaImg, systemTag: "ADVOCACY-NODE", linkedin: "https://in.linkedin.com/in/aneshya-das-153a91317" },
       { name: "Lavanya Kushwaha", role: "Content Lead", avatar: lavanyaImg, systemTag: "ADVOCACY-NODE", linkedin: "https://in.linkedin.com/in/laavanya-kushwaha-5748a5291" }
     ]
