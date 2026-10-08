@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Cloud, Sparkles, Server, Users, Terminal, CloudLightning, ArrowUpRight, ChevronLeft, ChevronRight, Radio } from 'lucide-react';
-import { sponsorsData } from '../data/eventData';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Sparkles, Users } from 'lucide-react';
 
 export const Sponsors: React.FC = () => {
   const communityPartners = [
