@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Users } from 'lucide-react';
+import awsLogo from '../assets/Amazon_Web_Services_Logo.svg';
 
 export const Sponsors: React.FC = () => {
   const communityPartners = [
@@ -69,13 +70,11 @@ export const Sponsors: React.FC = () => {
 
             {/* AWS Logo */}
             <div className="h-24 w-full flex items-center justify-center mb-6 px-4 group-hover:scale-105 transition-transform duration-300">
-              <svg viewBox="0 0 160 95" className="h-20 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M38.5 45.2c0-2.8-.8-5-2.4-6.6-1.6-1.6-3.8-2.4-6.7-2.4-3.1 0-5.7.9-7.7 2.8l-3.3-6.2c3.1-2.4 7-3.6 11.8-3.6 5.4 0 9.6 1.5 12.6 4.4 3 3 4.5 7.2 4.5 12.7v23.2h-7.8v-5.4c-2.3 3.9-6.3 5.9-11.8 5.9-4.3 0-7.8-1.2-10.4-3.7-2.6-2.5-3.9-5.7-3.9-9.7 0-4.3 1.5-7.7 4.5-10.1 3-2.4 7.2-3.6 12.8-3.6h7.8v-1.7zm-7.6 17.5c2.4 0 4.5-.8 6.2-2.3 1.7-1.5 2.5-3.5 2.5-5.9v-3.7h-7.1c-3.2 0-5.6.6-7.2 1.9-1.6 1.3-2.4 3.1-2.4 5.3 0 2.2.7 3.8 2 4.8 1.4 1 3.4 1.5 6 1.5z" fill="#FFFFFF"/>
-                <path d="M78.6 69.5l-8.4-30.8h8.5l4.8 21.6 5-21.6h8.4l5 21.6 4.8-21.6h8.3l-8.4 30.8h-8.7l-4.9-20.9-4.9 20.9h-8.5z" fill="#FFFFFF"/>
-                <path d="M129.5 59.2c2.7 1.8 5.8 2.8 9.3 2.8 2.5 0 4.4-.5 5.6-1.4 1.2-.9 1.8-2.1 1.8-3.6 0-1.4-.6-2.5-1.9-3.4-1.3-.9-3.6-1.8-7-2.8-4.7-1.4-8.2-3.1-10.4-5.2-2.3-2.1-3.4-4.9-3.4-8.5 0-4 1.5-7.3 4.5-9.8 3-2.5 7.1-3.8 12.3-3.8 4.2 0 7.9.8 11.2 2.5l-2.9 6.7c-2.6-1.4-5.5-2.1-8.6-2.1-2.3 0-4.1.5-5.3 1.4-1.2.9-1.8 2.1-1.8 3.5 0 1.2.6 2.3 1.8 3.1 1.2.8 3.4 1.7 6.6 2.6 5 1.5 8.7 3.3 11 5.4 2.4 2.1 3.5 5 3.5 8.7 0 4.3-1.6 7.7-4.7 10.3-3.1 2.6-7.4 3.9-12.8 3.9-5 0-9.4-1.1-13.3-3.2l3.1-6.9z" fill="#FFFFFF"/>
-                <path d="M14.5 76.5c22.6 15.6 55.4 18.2 84.7 9.8 4.8-1.4 9.6-3.2 14.2-5.4l2.8 6.7c-5.1 2.5-10.4 4.5-15.8 6-32.2 9.2-68.2 6.4-93.1-10.7l7.2-6.4z" fill="#FF9900"/>
-                <path d="M117.4 80.8c-3.1-3.8-11.4-6.3-15.6-5.8-.9.1-1.1-1-.3-1.6 5.5-3.8 19-1.7 20.8 1.4 1.2 2-2 16.3-7.2 20.5-.7.6-1.5.2-1.3-.6.9-3.9 3.6-10.1 3.6-13.9z" fill="#FF9900"/>
-              </svg>
+              <img
+                src={awsLogo}
+                alt="Amazon Web Services"
+                className="h-16 w-auto max-w-[200px] object-contain drop-shadow-[0_4px_12px_rgba(255,153,0,0.15)]"
+              />
             </div>
 
             <h3 className="font-display font-extrabold text-2xl text-white group-hover:text-amber-300 transition-colors mb-1">

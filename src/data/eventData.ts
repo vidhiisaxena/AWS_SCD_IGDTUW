@@ -8,7 +8,7 @@ import drishtiImg from '../assets/drishti.jpeg';
 import dipaliImg from '../assets/speakers/dipali.jpeg';
 import rajatImg from '../assets/speakers/rajat.jpeg';
 import ashishImg from '../assets/speakers/ashish.png';
-import varshaImg from '../assets/speakers/varsha.jpeg';
+// import varshaImg from '../assets/speakers/varsha.jpeg';
 import nileshImg from '../assets/speakers/ilesh.jpeg';
 import dimpleImg from '../assets/speakers/dimple.jpeg';
 import sumitImg from '../assets/speakers/sumit.png';
@@ -128,6 +128,16 @@ export const speakersData: Speaker[] = [
     socials: { linkedin: "https://www.linkedin.com/in/dipalik/" }
   },
   {
+    id: "spk-satinder",
+    name: "Satinder Singh",
+    role: "Director of Solutions Architecture",
+    company: "Amazon Web Services (AWS)",
+    sessionTitle: "TBA",
+    accentColor: "purple",
+    avatar: satinderImg,
+    socials: { linkedin: "https://www.linkedin.com/in/satinder-singh-1678b73/" }
+  },
+  {
     id: "spk-rajat",
     name: "Rajat Arora",
     role: "Cloud & DevOps Specialist",
@@ -147,16 +157,16 @@ export const speakersData: Speaker[] = [
     avatar: ashishImg,
     socials: { linkedin: "https://www.linkedin.com/in/ashish-kasaudhan-713a4225/" }
   },
-  {
-    id: "spk-varsha",
-    name: "Varsha Verma",
-    role: "Lead Cloud Engineer",
-    company: "Accenture • AWS Community Builder",
-    sessionTitle: "TBA",
-    accentColor: "pink",
-    avatar: varshaImg,
-    socials: { linkedin: "https://www.linkedin.com/in/varsha-verma-cloud-devops/" }
-  },
+  // {
+  //   id: "spk-varsha",
+  //   name: "Varsha Verma",
+  //   role: "Lead Cloud Engineer",
+  //   company: "Accenture • AWS Community Builder",
+  //   sessionTitle: "TBA",
+  //   accentColor: "pink",
+  //   avatar: varshaImg,
+  //   socials: { linkedin: "https://www.linkedin.com/in/varsha-verma-cloud-devops/" }
+  // },
   {
     id: "spk-nilesh",
     name: "Nilesh Vaghela",
@@ -172,7 +182,7 @@ export const speakersData: Speaker[] = [
     name: "Dimple Vaghela",
     role: "Co-Founder",
     company: "CloudKida • AWS Hero",
-    sessionTitle: "TBA",
+    sessionTitle: "Getting started robotics on AWS",
     accentColor: "blue",
     avatar: dimpleImg,
     socials: { linkedin: "https://www.linkedin.com/in/dimple-vaghela-ba45447b/" }
@@ -197,16 +207,7 @@ export const speakersData: Speaker[] = [
     avatar: vridhiImg,
     socials: { linkedin: "https://www.linkedin.com/in/vridhi-duggal-060682275/" }
   },
-  {
-    id: "spk-satinder",
-    name: "Satinder Singh",
-    role: "Director of Solutions Architecture",
-    company: "Amazon Web Services (AWS)",
-    sessionTitle: "TBA",
-    accentColor: "purple",
-    avatar: satinderImg,
-    socials: { linkedin: "https://www.linkedin.com/in/satinder-singh-1678b73/" }
-  },
+  
   {
     id: "spk-diksha",
     name: "Diksha Verma",
