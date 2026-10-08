@@ -1,3 +1,9 @@
+import saniaImg from '../assets/Sania.jpeg';
+import vidhiImg from '../assets/vidhi.jpeg';
+import mehakImg from '../assets/Mehak.jpeg';
+import aneshyaImg from '../assets/Aneshya.jpeg';
+import lavanyaImg from '../assets/lavanya.png';
+
 export interface Speaker {
   id: string;
   badgeNumber: string;
@@ -213,12 +219,12 @@ export const teamControlData: TeamCategory[] = [
     name: "COMMUNITY",
     status: "ONLINE • 100% TELEMETRY",
     members: [
-      { name: "Sania Verma", role: "President", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80", systemTag: "STATION-LEAD-01", linkedin: "#" },
-      { name: "Vidhi Saxena", role: "Technical Lead", avatar: "https://photos.app.goo.gl/vosfueUzo1XYTd4P7", systemTag: "RELATIONS-NODE", linkedin: "#" },
-      { name: "Mehak", role: "Event Management Lead", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80", systemTag: "ADVOCACY-NODE", linkedin: "#" },
+      { name: "Sania Verma", role: "President", avatar: saniaImg, systemTag: "STATION-LEAD-01", linkedin: "https://www.linkedin.com/in/sania-verma-21a642291/" },
+      { name: "Vidhi Saxena", role: "Technical Lead", avatar: vidhiImg, systemTag: "RELATIONS-NODE", linkedin: "https://in.linkedin.com/in/vidhi-saxena-86150a243" },
+      { name: "Mehak", role: "Event Management Lead", avatar: mehakImg, systemTag: "ADVOCACY-NODE", linkedin: "https://in.linkedin.com/in/mehak-76677a288" },
       { name: "Drishti", role: "Public Relations Lead", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80", systemTag: "ADVOCACY-NODE", linkedin: "#" },
-      { name: "Aneshya Das", role: "Media Lead", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80", systemTag: "ADVOCACY-NODE", linkedin: "#" },
-      { name: "Lavanya Kushwaha", role: "Content Lead", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80", systemTag: "ADVOCACY-NODE", linkedin: "#" }
+      { name: "Aneshya Das", role: "Media Lead", avatar: aneshyaImg, systemTag: "ADVOCACY-NODE", linkedin: "https://in.linkedin.com/in/aneshya-das-153a91317" },
+      { name: "Lavanya Kushwaha", role: "Content Lead", avatar: lavanyaImg, systemTag: "ADVOCACY-NODE", linkedin: "https://in.linkedin.com/in/laavanya-kushwaha-5748a5291" }
     ]
   },
   {

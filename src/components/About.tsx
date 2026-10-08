@@ -1,32 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Hammer, Users, Sparkles } from 'lucide-react';
+import { BookOpen, Hammer, TrendingUp, Sparkles } from 'lucide-react';
+
 
 export const About: React.FC = () => {
   const pillars = [
     {
       title: 'LEARN',
-      description: 'Gain practical knowledge, industry insights, and guidance from experienced professionals and passionate builders.',
+      subtitle: 'Workshops • Talks • Knowledge',
+      description: 'Hands-on architectural masterclasses and guided deep-dives from industry cloud engineers and community ambassadors.',
       icon: BookOpen,
       color: 'from-cyan-500 to-blue-600',
       borderColor: 'border-cyan-500/40 hover:border-cyan-400',
       badge: 'PILLAR 01',
+      stats: '10+ Tech Sessions',
     },
     {
       title: 'BUILD',
-      description: 'Get hands-on with AWS, emerging technologies, and real-world challenges while transforming ideas into meaningful solutions.',
+      subtitle: 'Projects • Experiments • Hackathons',
+      description: 'Turn theoretical knowledge into production-ready serverless apps, AI pipelines, and distributed event-driven systems.',
       icon: Hammer,
       color: 'from-purple-500 to-pink-600',
       borderColor: 'border-purple-500/40 hover:border-purple-400',
       badge: 'PILLAR 02',
+      stats: 'Live Deployment Labs',
     },
     {
-      title: 'CONNECT',
-      description: 'Meet fellow students, developers, industry professionals, and members of the wider AWS community to learn, collaborate, and grow together.',
-      icon: Users,
+      title: 'GROW',
+      subtitle: 'Community • Networking • Opportunities',
+      description: 'Connect with peers across universities, engage with cloud recruiters, and unlock internships, swags, and certifications.',
+      icon: TrendingUp,
       color: 'from-amber-500 to-orange-600',
       borderColor: 'border-amber-500/40 hover:border-amber-400',
       badge: 'PILLAR 03',
+      stats: 'Endless Horizons',
     },
   ];
 
@@ -56,7 +63,7 @@ export const About: React.FC = () => {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-space-850 border border-purple-500/30 text-purple-300 text-xs font-mono tracking-wider mb-4"
         >
           <Sparkles className="w-3.5 h-3.5 text-aws-blue" />
-          <span>ABOUT THE INITIATIVE</span>
+          <span>ABOUT THE SUMMIT</span>
         </motion.div>
 
         {/* Section Title */}
@@ -81,9 +88,7 @@ export const About: React.FC = () => {
           <p className="font-sans text-slate-200 text-base sm:text-lg leading-relaxed font-medium">
             AWS Student Community Day at IGDTUW is a student-led initiative designed to bring together aspiring developers, cloud enthusiasts, innovators, and technology learners under one platform.
           </p>
-          <p className="font-sans text-slate-300 text-sm sm:text-base leading-relaxed">
-            The event is a celebration of learning, building, and connecting—giving students the opportunity to explore AWS and emerging technologies beyond the classroom through expert-led sessions, hands-on experiences, meaningful conversations, and real-world insights.
-          </p>
+
           <p className="font-sans text-slate-300 text-sm sm:text-base leading-relaxed">
             Our goal is to create an inclusive space where students can learn from industry professionals, build alongside fellow innovators, exchange ideas, and turn curiosity into action. From discovering new technologies to showcasing ideas and connecting with the wider AWS community, AWS Student Community Day is a platform to take the next step in your technology journey.
           </p>
@@ -109,6 +114,9 @@ export const About: React.FC = () => {
                     <span className="font-mono text-xs font-bold px-3 py-1 rounded-full bg-space-800 border border-slate-700 text-slate-300">
                       {pillar.badge}
                     </span>
+                    <span className="font-mono text-xs text-slate-400 font-semibold">
+                      {pillar.stats}
+                    </span>
                   </div>
 
                   {/* Icon */}
@@ -118,10 +126,13 @@ export const About: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="font-display font-extrabold text-3xl text-white group-hover:text-cyan-300 transition-colors mb-3">
+                  {/* Title & Subtitle */}
+                  <h3 className="font-display font-extrabold text-3xl text-white group-hover:text-cyan-300 transition-colors mb-2">
                     {pillar.title}
                   </h3>
+                  <p className="font-mono text-xs text-purple-300 font-medium mb-4">
+                    {pillar.subtitle}
+                  </p>
 
                   {/* Description */}
                   <p className="font-sans text-sm text-slate-300 leading-relaxed">
