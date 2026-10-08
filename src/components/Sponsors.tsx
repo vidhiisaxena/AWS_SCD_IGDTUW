@@ -2,110 +2,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Cloud, Sparkles, Server, Users, Terminal, CloudLightning, ArrowUpRight, ChevronLeft, ChevronRight, Radio } from 'lucide-react';
 import { sponsorsData } from '../data/eventData';
-import type { Sponsor } from '../data/eventData';
-
-const getIcon = (iconName: string, size = 'w-6 h-6') => {
-  switch (iconName) {
-    case 'CloudLightning':
-      return <CloudLightning className={`${size} text-amber-400`} />;
-    case 'Server':
-      return <Server className={`${size} text-cyan-400`} />;
-    case 'Users':
-      return <Users className={`${size} text-pink-400`} />;
-    case 'Terminal':
-    default:
-      return <Terminal className={`${size} text-purple-400`} />;
-  }
-};
-
-// Star positions (in % of the constellation box): evenly spread, alternating high/low
-const getPos = (i: number, total: number) => ({
-  x: ((i + 0.5) / total) * 100,
-  y: i % 2 === 0 ? 28 : 72,
-});
-
-// Replays animations every time the element scrolls into view.
-// When hiding, it resets quickly (no delay) so the next entrance starts clean.
-const enter = (show: boolean, transition: Record<string, unknown>) =>
-  show ? transition : { duration: 0.25 };
-
-const StarNode: React.FC<{ sponsor: Sponsor; idx: number; small?: boolean }> = ({ sponsor, idx, small }) => (
-  <div className="relative inline-flex items-center justify-center">
-    <motion.span
-      className="absolute inset-0 rounded-full border border-cyan-300/60"
-      animate={{ scale: [1, 1.9], opacity: [0.6, 0] }}
-      transition={{ duration: 2.4, repeat: Infinity, delay: idx * 0.4, ease: 'easeOut' }}
-    />
-    <div className={`rounded-full p-[2px] bg-gradient-to-br ${sponsor.tierColor} shadow-[0_0_30px_rgba(34,211,238,0.45)]`}>
-      <div className={`${small ? 'w-10 h-10' : 'w-16 h-16'} rounded-full bg-space-950 flex items-center justify-center`}>
-        {getIcon(sponsor.iconName, small ? 'w-5 h-5' : 'w-7 h-7')}
-      </div>
-    </div>
-  </div>
-);
-
-const StarCard: React.FC<{ sponsor: Sponsor; idx: number }> = ({ sponsor, idx }) => (
-  <motion.div
-    whileHover={{ y: -6, scale: 1.03 }}
-    className="relative rounded-2xl p-4 bg-gradient-to-b from-space-850/90 to-space-950/90 border border-slate-700/60 hover:border-aws-purple transition-colors shadow-[0_10px_30px_rgba(0,0,0,0.5)] backdrop-blur overflow-hidden"
-  >
-    <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${sponsor.tierColor}`} />
-    <span className="inline-block font-mono text-[10px] font-bold uppercase tracking-wider text-slate-300 px-2 py-0.5 rounded bg-space-800 border border-slate-700 mb-2">
-      {sponsor.tier}
-    </span>
-    <h3 className="font-display font-extrabold text-lg text-white mb-1.5">{sponsor.name}</h3>
-    <p className="font-sans text-xs text-slate-300 leading-relaxed">{sponsor.description}</p>
-    <div className="mt-3 pt-2.5 border-t border-slate-800/80 flex items-center justify-between font-mono text-[10px] text-slate-400">
-      <span>★ STAR {String(idx + 1).padStart(2, '0')}</span>
-      <span className="text-cyan-400 font-semibold flex items-center gap-0.5">
-        VERIFIED <ArrowUpRight className="w-3 h-3" />
-      </span>
-    </div>
-  </motion.div>
-);
-
-// Separate "Partner with us" call-to-action: a signal beacon
-const SignalBeacon: React.FC<{ show: boolean }> = ({ show }) => (
-  <motion.a
-    href="mailto:awscloudclubigdtuw@gmail.com"
-    initial={{ opacity: 0, y: 30 }}
-    animate={show ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-    transition={enter(show, { duration: 0.6, ease: 'easeOut' })}
-    whileHover={{ scale: 1.015 }}
-    className="group relative block w-full max-w-3xl rounded-3xl p-[1.5px] bg-gradient-to-r from-cyan-400/60 via-purple-500/60 to-pink-500/60 shadow-[0_0_50px_rgba(139,92,246,0.25)]"
-  >
-    <div className="relative rounded-3xl bg-space-950/95 backdrop-blur px-6 py-8 sm:px-10 sm:py-9 flex flex-col sm:flex-row items-center gap-6 sm:gap-8 overflow-hidden">
-      {/* Radar antenna */}
-      <div className="relative shrink-0 w-24 h-24 flex items-center justify-center">
-        {[0, 1, 2].map((i) => (
-          <motion.span
-            key={i}
-            className="absolute inset-0 rounded-full border border-cyan-300/50"
-            animate={{ scale: [0.4, 1.5], opacity: [0.7, 0] }}
-            transition={{ duration: 3, repeat: Infinity, delay: i * 1, ease: 'easeOut' }}
-          />
-        ))}
-        <div className="relative z-10 w-14 h-14 rounded-full bg-space-850 border border-cyan-300/50 flex items-center justify-center shadow-[0_0_25px_rgba(34,211,238,0.4)]">
-          <Radio className="w-6 h-6 text-cyan-300" />
-        </div>
-      </div>
-
-      {/* Message */}
-      <div className="text-center sm:text-left flex-1">
-        <div className="font-mono text-[10px] tracking-[0.3em] text-purple-300 mb-1.5">INCOMING CHANNEL · OPEN</div>
-        <h3 className="font-display font-black text-xl sm:text-2xl text-white mb-1.5">Light up the next star</h3>
-        <p className="font-sans text-sm text-slate-300">
-          Want to support the next generation of cloud architects? Send us a signal and join the constellation.
-        </p>
-      </div>
-
-      {/* Button */}
-      <span className="shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-purple-500 text-space-950 font-mono text-xs font-bold tracking-wider group-hover:gap-3 transition-all">
-        SEND TRANSMISSION <Send className="w-3.5 h-3.5" />
-      </span>
-    </div>
-  </motion.a>
-);
 
 export const Sponsors: React.FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -130,29 +26,13 @@ export const Sponsors: React.FC = () => {
     <section id="sponsors" className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden scroll-mt-16 sm:scroll-mt-20">
       {/* Background Subtle Technical Grid */}
       <div className="absolute inset-0 cosmic-grid opacity-25 pointer-events-none" />
+
+      {/* Atmospheric Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-cyan-600/10 rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Twinkling sky */}
-      <div className="absolute inset-0 pointer-events-none">
-        {bgStars.map((s, i) => (
-          <motion.span
-            key={i}
-            className="absolute rounded-full bg-white"
-            style={{ left: `${s.x}%`, top: `${s.y}%`, width: s.size, height: s.size }}
-            animate={{ opacity: [0.15, 0.9, 0.15] }}
-            transition={{ duration: s.dur, repeat: Infinity, delay: s.delay, ease: 'easeInOut' }}
-          />
-        ))}
-        {/* Shooting star */}
-        <motion.div
-          className="absolute h-px w-28 bg-gradient-to-r from-transparent via-cyan-200 to-white rotate-[22deg]"
-          initial={{ left: '-10%', top: '4%', opacity: 0 }}
-          animate={{ left: ['-10%', '110%'], top: ['4%', '48%'], opacity: [0, 1, 1, 0] }}
-          transition={{ duration: 2.2, repeat: Infinity, repeatDelay: 6, ease: 'easeIn' }}
-        />
-      </div>
-
       <div className="relative z-10 flex flex-col items-center">
+        
+        {/* Section Badge */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,6 +43,7 @@ export const Sponsors: React.FC = () => {
           <span>ALLIANCE FLEET</span>
         </motion.div>
 
+        {/* Section Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -357,7 +238,7 @@ export const Sponsors: React.FC = () => {
                 </div>
               </motion.div>
             ))}
-          </svg>
+          </div>
 
           {/* Become a Partner Callout */}
           <div className="mt-8 sm:mt-14 inline-flex items-center gap-3 px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl bg-space-900/80 border border-purple-500/30 backdrop-blur max-w-full">
@@ -373,26 +254,8 @@ export const Sponsors: React.FC = () => {
             </a>
           </div>
 
-          {sponsorsData.map((sponsor, idx) => (
-            <motion.div
-              key={sponsor.id}
-              initial={{ opacity: 0, x: 30 }}
-              animate={mobileShow ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-              transition={enter(mobileShow, { delay: idx * 0.15, duration: 0.5 })}
-              className="relative mb-7 last:mb-0"
-            >
-              <div className="absolute -left-12 top-4">
-                <StarNode sponsor={sponsor} idx={idx} small />
-              </div>
-              <StarCard sponsor={sponsor} idx={idx} />
-            </motion.div>
-          ))}
         </div>
 
-        {/* Partner call-to-action, separate from the sponsors */}
-        <div ref={beaconRef} className="w-full flex justify-center mt-16">
-          <SignalBeacon show={beaconShow} />
-        </div>
       </div>
     </section>
   );
