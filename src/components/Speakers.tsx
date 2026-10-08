@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Radio, Sparkles } from 'lucide-react';
 import { LinkedinIcon } from './BrandIcons';
 import { type Speaker, speakersData } from '../data/eventData';
+import { trackEvent } from '../analytics';
 
 
 interface SpeakerCardProps {
@@ -48,6 +49,7 @@ export const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
               href={speaker.socials.linkedin}
               target="_blank"
               rel="noreferrer"
+              onClick={() => trackEvent('speaker_click', { speaker: speaker.name, platform: 'linkedin' })}
               className="p-1.5 rounded-lg bg-space-900 border border-slate-700/80 hover:border-cyan-400 text-slate-300 hover:text-white transition-colors"
               aria-label={`${speaker.name} LinkedIn`}
             >
@@ -56,14 +58,16 @@ export const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
           )}
         </div>
 
-        {/* Speaker Photo */}
-        <div className="relative w-full h-56 rounded-2xl overflow-hidden mb-5 border border-slate-700/60 group-hover:border-cyan-400/50 transition-colors">
+        {/* Speaker Photo - Clean full color, responsive aspect ratio, properly framed */}
+        <div className="relative w-full aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden mb-5 border border-slate-700/60 group-hover:border-cyan-400/50 transition-colors bg-space-900">
           <img
             src={speaker.avatar}
             alt={speaker.name}
-            className="w-full h-full object-cover object-center filter grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+            loading="eager"
+            decoding="async"
+            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-space-950/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-space-950/40 via-transparent to-transparent pointer-events-none" />
         </div>
 
         {/* Speaker Name, Role & Company */}
@@ -137,7 +141,7 @@ export const Speakers: React.FC = () => {
         {/* Centered Speakers Grid */}
         <div className="w-full flex flex-wrap justify-center gap-6 pt-2 px-2">
           {speakersData.map((speaker, index) => (
-            <div key={speaker.id} className="w-[280px] sm:w-[290px] md:w-[300px]">
+            <div key={speaker.id} className="w-full max-w-[300px] sm:w-[290px] md:w-[300px]">
               <SpeakerCard speaker={speaker} index={index} />
             </div>
           ))}

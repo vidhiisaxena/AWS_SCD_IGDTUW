@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, ArrowRight, ArrowDown, Sparkles, Rocket } from 'lucide-react';
 import { eventConfig } from '../data/eventData';
+import { trackEvent } from '../analytics';
 
 interface HeroProps {
   onExploreCommunity: () => void;
@@ -108,7 +109,10 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCommunity }) => {
         >
           {/* Primary CTA */}
           <button
-            onClick={()=>(window.location.href = "https://konfhub.com/aws-student-community-day-2026-new-delhi")}
+            onClick={() => {
+              trackEvent('rsvp_click', { location: 'hero_primary' });
+              window.location.href = "https://konfhub.com/aws-student-community-day-2026-new-delhi";
+            }}
             className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-aws-purple via-purple-600 to-aws-pink text-white font-display font-extrabold text-sm sm:text-base tracking-wider shadow-[0_0_35px_rgba(139,92,246,0.45)] hover:shadow-[0_0_45px_rgba(255,0,122,0.6)] hover:scale-105 transition-all flex items-center justify-center gap-2.5 group"
           >
             <Rocket className="w-5 h-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
@@ -118,7 +122,10 @@ export const Hero: React.FC<HeroProps> = ({ onExploreCommunity }) => {
 
           {/* Secondary CTA */}
           <button
-            onClick={onExploreCommunity}
+            onClick={() => {
+              trackEvent('nav_click', { target: 'explore_community' });
+              onExploreCommunity();
+            }}
             className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-space-850/80 hover:bg-space-800 border border-slate-700 hover:border-aws-blue text-slate-200 hover:text-white font-mono text-xs sm:text-sm font-semibold tracking-wide transition-all backdrop-blur flex items-center justify-center gap-2 group"
           >
             <span>EXPLORE THE COMMUNITY</span>

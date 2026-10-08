@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, CheckCircle2, Ticket, ExternalLink } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { eventConfig } from '../data/eventData';
+import { trackEvent } from '../analytics';
 
 interface RegistrationModalProps {
   isOpen: boolean;
@@ -106,6 +107,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
               href={eventConfig.registrationUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent('rsvp_click', { location: 'registration_modal' })}
               className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-aws-purple via-purple-600 to-aws-pink text-white font-display font-extrabold text-sm sm:text-base tracking-wider shadow-[0_0_30px_rgba(139,92,246,0.45)] hover:shadow-[0_0_40px_rgba(255,0,122,0.6)] hover:scale-[1.02] transition-all flex items-center justify-center gap-2 group"
             >
               <span>PROCEED TO RSVP FORM</span>

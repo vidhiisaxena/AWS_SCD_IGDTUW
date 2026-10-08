@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Cloud, Gamepad2, Compass, Sparkles, MapPin, Calendar, Clock, ArrowRight } from 'lucide-react';
 import { eventConfig } from '../data/eventData';
+import { trackEvent } from '../analytics';
 
 interface WelcomeScreenProps {
   onEnterCloud: () => void;
@@ -95,7 +96,10 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
           <motion.button
             whileHover={{ scale: 1.03, y: -6 }}
             whileTap={{ scale: 0.98 }}
-            onClick={onEnterCloud}
+            onClick={() => {
+              trackEvent('enter_cloud');
+              onEnterCloud();
+            }}
             className="group relative flex flex-col items-start p-7 rounded-2xl text-left bg-gradient-to-b from-space-800/90 to-space-900/90 border-2 border-aws-purple/50 hover:border-aws-blue shadow-[0_0_30px_rgba(139,92,246,0.25)] hover:shadow-[0_0_40px_rgba(0,240,255,0.4)] transition-all overflow-hidden"
           >
             {/* Top Glowing Gradient Accent Bar */}
@@ -131,7 +135,10 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
           <motion.button
             whileHover={{ scale: 1.03, y: -6 }}
             whileTap={{ scale: 0.98 }}
-            onClick={onOpenArcade}
+            onClick={() => {
+              trackEvent('launch_arcade', { source: 'welcome_screen' });
+              onOpenArcade();
+            }}
             className="group relative flex flex-col items-start p-7 rounded-2xl text-left bg-gradient-to-b from-space-800/90 to-space-900/90 border-2 border-aws-pink/50 hover:border-amber-400 shadow-[0_0_30px_rgba(255,0,122,0.25)] hover:shadow-[0_0_40px_rgba(255,153,0,0.4)] transition-all overflow-hidden"
           >
             {/* Top Glowing Gradient Accent Bar */}

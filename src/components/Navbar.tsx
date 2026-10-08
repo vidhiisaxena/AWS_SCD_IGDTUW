@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Gamepad2, ArrowRight } from 'lucide-react';
 import { eventConfig } from '../data/eventData';
+import { trackEvent } from '../analytics';
 
 interface NavbarProps {
   onOpenArcade: () => void;
@@ -30,6 +31,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenArcade }) => {
   ];
 
   const handleNavClick = (href: string) => {
+    trackEvent('nav_click', { target: href });
     setMobileMenuOpen(false);
     setTimeout(() => {
       const element = document.querySelector(href);
@@ -96,7 +98,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenArcade }) => {
         <div className="hidden sm:flex items-center gap-3">
           {/* Cloud Arcade Button */}
           <button
-            onClick={onOpenArcade}
+            onClick={() => {
+              trackEvent('launch_arcade', { source: 'navbar_desktop' });
+              onOpenArcade();
+            }}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-mono text-xs font-semibold text-amber-300 bg-amber-500/10 border border-amber-500/30 hover:bg-amber-500/20 hover:border-amber-400 transition-all shadow-[0_0_12px_rgba(255,153,0,0.15)]"
           >
             <Gamepad2 className="w-3.5 h-3.5 text-amber-400" />
@@ -105,7 +110,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenArcade }) => {
 
           {/* Primary CTA: Register Now */}
           <button
-            onClick={()=> (window.location.href = "https://konfhub.com/aws-student-community-day-2026-new-delhi")}
+            onClick={() => {
+              trackEvent('rsvp_click', { location: 'navbar_desktop' });
+              window.location.href = "https://konfhub.com/aws-student-community-day-2026-new-delhi";
+            }}
             className="relative group overflow-hidden px-4 py-2 rounded-xl bg-gradient-to-r from-aws-purple to-aws-pink text-white font-display font-bold text-xs tracking-wider shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:shadow-[0_0_25px_rgba(255,0,122,0.5)] transition-all flex items-center gap-1.5"
           >
             <span>REGISTER NOW</span>
@@ -158,6 +166,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenArcade }) => {
               <div className="pt-4 border-t border-slate-800 flex flex-col gap-3">
                 <button
                   onClick={() => {
+                    trackEvent('launch_arcade', { source: 'navbar_mobile_menu' });
                     setMobileMenuOpen(false);
                     onOpenArcade();
                   }}
@@ -169,6 +178,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenArcade }) => {
 
                 <button
                   onClick={() => {
+                    trackEvent('rsvp_click', { location: 'navbar_mobile_menu' });
                     window.location.href = "https://konfhub.com/aws-student-community-day-2026-new-delhi";
                   }}
                   className="w-full py-3 rounded-xl bg-gradient-to-r from-aws-purple to-aws-pink text-white font-display font-bold text-xs tracking-wider flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(139,92,246,0.4)]"

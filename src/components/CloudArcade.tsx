@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Gamepad2, ExternalLink, ArrowLeft, Trophy, Sparkles, X, Maximize2 } from 'lucide-react';
 import { arcadeGames } from '../data/eventData';
+import { trackEvent } from '../analytics';
 
 interface CloudArcadeProps {
   onBackToSite: () => void;
@@ -115,6 +116,13 @@ export const CloudArcade: React.FC<CloudArcadeProps> = ({ onBackToSite }) => {
                 href={game.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent('game_click', {
+                    game: game.id === 'memory-cloud' ? 'memory_match' : 'cloud_crush',
+                    title: game.title,
+                    mode: 'external_tab',
+                  })
+                }
                 className={`w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-display font-bold text-sm tracking-wide text-white transition-all shadow-lg ${
                   game.id === 'memory-cloud'
                     ? 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 shadow-cyan-500/25'
@@ -127,7 +135,14 @@ export const CloudArcade: React.FC<CloudArcadeProps> = ({ onBackToSite }) => {
 
               {/* Secondary: Instant preview modal inside site */}
               <button
-                onClick={() => setActiveIframeGame({ title: game.title, url: game.url })}
+                onClick={() => {
+                  trackEvent('game_click', {
+                    game: game.id === 'memory-cloud' ? 'memory_match' : 'cloud_crush',
+                    title: game.title,
+                    mode: 'quick_window',
+                  });
+                  setActiveIframeGame({ title: game.title, url: game.url });
+                }}
                 className="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-xl font-mono text-xs text-slate-400 hover:text-white border border-slate-800 hover:border-slate-600 bg-space-900/60 transition-colors"
               >
                 <Maximize2 className="w-3.5 h-3.5" />

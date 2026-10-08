@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, Clock, ExternalLink, Compass } from 'lucide-react';
 import { eventConfig } from '../data/eventData';
+import { trackEvent } from '../analytics';
 
 export const Venue: React.FC = () => {
   return (
@@ -93,6 +94,7 @@ export const Venue: React.FC = () => {
               href={eventConfig.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent('venue_click', { location: 'google_maps' })}
               className="inline-flex items-center justify-center gap-2 w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-aws-purple to-aws-blue text-white font-display font-extrabold text-sm tracking-wider shadow-[0_0_25px_rgba(139,92,246,0.35)] hover:shadow-[0_0_35px_rgba(0,240,255,0.45)] hover:scale-[1.02] transition-all"
             >
               <span>OPEN MAP</span>
