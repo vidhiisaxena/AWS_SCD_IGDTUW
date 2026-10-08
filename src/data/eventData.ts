@@ -237,8 +237,8 @@ export const teamControlData: TeamCategory[] = [
     name: "TECH",
     status: "DEPLOYED • 0 DOWNTIME",
     members: [
-      { name: "Tanvi Mehta", role: "Tech Lead & Cloud Architect", avatar: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=200&auto=format&fit=crop&q=80", systemTag: "DEV-ROOT-01", github: "#" },
-      { name: "Mehak Jain", role: "Fullstack Builder & Arcade Architect", avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&auto=format&fit=crop&q=80", systemTag: "DEV-UI-02", github: "#" }
+      { name: "Tanvi Mehta", role: "Tech Lead & Cloud Architect", avatar: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=200&auto=format&fit=crop&q=80", systemTag: "DEV-ROOT-01", linkedin: "#", github: "#" },
+      { name: "Mehak Jain", role: "Fullstack Builder & Arcade Architect", avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&auto=format&fit=crop&q=80", systemTag: "DEV-UI-02", linkedin: "#", github: "#" }
     ]
   },
   {

@@ -168,61 +168,50 @@ export const TeamControlRoom: React.FC = () => {
                             setMobileMemberIdx(mobileMemberIdx - 1);
                           }
                         }}
-                        className="w-full rounded-2xl p-4 bg-space-850/90 border border-slate-700/70 shadow-lg flex flex-col justify-between"
+                        className="w-full rounded-2xl p-6 bg-space-850/90 border border-slate-700/70 shadow-lg flex flex-col items-center text-center relative"
                       >
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="font-mono text-[9px] text-slate-400 bg-space-900 px-2.5 py-0.5 rounded border border-slate-800">
-                            {member.systemTag}
-                          </span>
-                          <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
-                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                            ONLINE
-                          </span>
+                        {/* Social Links */}
+                        <div className="absolute top-3.5 right-3.5 flex items-center gap-1.5 z-10">
+                          {member.linkedin && (
+                            <a
+                              href={member.linkedin}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="p-1.5 rounded-lg bg-space-900 border border-slate-700 text-slate-300 hover:text-cyan-300 hover:border-cyan-400 transition-colors"
+                              aria-label={`${member.name} LinkedIn`}
+                            >
+                              <LinkedinIcon className="w-4 h-4" />
+                            </a>
+                          )}
+                          {member.github && (
+                            <a
+                              href={member.github}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="p-1.5 rounded-lg bg-space-900 border border-slate-700 text-slate-300 hover:text-cyan-300 hover:border-cyan-400 transition-colors"
+                              aria-label={`${member.name} GitHub`}
+                            >
+                              <GithubIcon className="w-4 h-4" />
+                            </a>
+                          )}
                         </div>
 
-                        <div className="flex items-center gap-3.5 mb-3.5">
+                        {/* Large Avatar Photo */}
+                        <div className="relative mb-3.5 mt-1">
                           <img
                             src={member.avatar}
                             alt={member.name}
-                            className="w-14 h-14 rounded-xl object-cover border border-purple-500/40 shadow"
+                            className="w-24 h-24 rounded-2xl object-cover border-2 border-purple-500/40 shadow-lg"
                           />
-                          <div className="min-w-0 flex-1">
-                            <h4 className="font-display font-bold text-base text-white truncate">
-                              {member.name}
-                            </h4>
-                            <p className="font-sans text-xs text-purple-300 font-medium line-clamp-1">
-                              {member.role}
-                            </p>
-                          </div>
                         </div>
 
-                        <div className="pt-2.5 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                          <span className="text-cyan-400 font-semibold">AWS SGB IGDTUW</span>
-                          <div className="flex items-center gap-3">
-                            {member.linkedin && (
-                              <a
-                                href={member.linkedin}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="hover:text-white text-slate-400 p-1"
-                                aria-label="LinkedIn"
-                              >
-                                <LinkedinIcon className="w-4 h-4" />
-                              </a>
-                            )}
-                            {member.github && (
-                              <a
-                                href={member.github}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="hover:text-white text-slate-400 p-1"
-                                aria-label="GitHub"
-                              >
-                                <GithubIcon className="w-4 h-4" />
-                              </a>
-                            )}
-                          </div>
-                        </div>
+                        {/* Name & Position */}
+                        <h4 className="font-display font-bold text-lg text-white">
+                          {member.name}
+                        </h4>
+                        <p className="font-sans text-xs text-purple-300 font-medium mt-1">
+                          {member.role}
+                        </p>
                       </motion.div>
                     );
                   })()}
@@ -260,61 +249,50 @@ export const TeamControlRoom: React.FC = () => {
                   {activeCategory.members.map((member) => (
                     <div
                       key={member.name}
-                      className="p-5 rounded-2xl bg-space-850/80 border border-slate-800 hover:border-aws-blue transition-all group relative overflow-hidden"
+                      className="p-6 rounded-2xl bg-space-850/80 border border-slate-800 hover:border-cyan-400/50 hover:shadow-[0_12px_35px_rgba(0,0,0,0.5)] transition-all group relative flex flex-col items-center text-center overflow-hidden"
                     >
-                      {/* Top corner station tag */}
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="font-mono text-[10px] text-slate-400 bg-space-900 px-2 py-0.5 rounded border border-slate-800">
-                          {member.systemTag}
-                        </span>
-                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      {/* Social Links (LinkedIn & GitHub) */}
+                      <div className="absolute top-4 right-4 flex items-center gap-1.5 z-10">
+                        {member.linkedin && (
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="p-2 rounded-xl bg-space-900/90 border border-slate-700/80 hover:border-cyan-400 text-slate-400 hover:text-cyan-300 transition-all hover:scale-110 shadow-sm"
+                            aria-label={`${member.name} LinkedIn`}
+                          >
+                            <LinkedinIcon className="w-4 h-4" />
+                          </a>
+                        )}
+                        {member.github && (
+                          <a
+                            href={member.github}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="p-2 rounded-xl bg-space-900/90 border border-slate-700/80 hover:border-cyan-400 text-slate-400 hover:text-cyan-300 transition-all hover:scale-110 shadow-sm"
+                            aria-label={`${member.name} GitHub`}
+                          >
+                            <GithubIcon className="w-4 h-4" />
+                          </a>
+                        )}
                       </div>
 
-                      {/* Member photo and info */}
-                      <div className="flex items-center gap-4 mb-4">
+                      {/* Photo: significantly larger */}
+                      <div className="relative mb-4 mt-2">
                         <img
                           src={member.avatar}
                           alt={member.name}
-                          className="w-14 h-14 rounded-xl object-cover border border-purple-500/40 group-hover:scale-105 transition-transform"
+                          className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-purple-500/30 group-hover:border-cyan-400 group-hover:scale-105 transition-all duration-300 shadow-xl"
                         />
-                        <div>
-                          <h4 className="font-display font-bold text-base text-white group-hover:text-cyan-300 transition-colors">
-                            {member.name}
-                          </h4>
-                          <p className="font-sans text-xs text-purple-300 font-medium">
-                            {member.role}
-                          </p>
-                        </div>
                       </div>
 
-                      {/* Links */}
-                      <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400">
-                        <span>AWS STUDENT BUILDER GROUP IGDTUW</span>
-                        <div className="flex items-center gap-2">
-                          {member.linkedin && (
-                            <a
-                              href={member.linkedin}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="hover:text-white text-slate-400"
-                              aria-label="LinkedIn"
-                            >
-                              <LinkedinIcon className="w-3.5 h-3.5" />
-                            </a>
-                          )}
-                          {member.github && (
-                            <a
-                              href={member.github}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="hover:text-white text-slate-400"
-                              aria-label="GitHub"
-                            >
-                              <GithubIcon className="w-3.5 h-3.5" />
-                            </a>
-                          )}
-                        </div>
-                      </div>
+                      {/* Name & Position */}
+                      <h4 className="font-display font-bold text-lg sm:text-xl text-white group-hover:text-cyan-300 transition-colors">
+                        {member.name}
+                      </h4>
+                      <p className="font-sans text-xs sm:text-sm text-purple-300 font-medium mt-1 max-w-[220px]">
+                        {member.role}
+                      </p>
                     </div>
                   ))}
                 </motion.div>
