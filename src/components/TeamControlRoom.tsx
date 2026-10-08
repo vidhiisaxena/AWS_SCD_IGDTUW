@@ -151,7 +151,6 @@ export const TeamControlRoom: React.FC = () => {
                 <AnimatePresence mode="wait">
                   {(() => {
                     const member = activeCategory.members[mobileMemberIdx] || activeCategory.members[0];
-                    const firstName = member.name.split(' ')[0];
                     return (
                       <motion.div
                         key={`${activeCategory.id}-${mobileMemberIdx}`}
@@ -198,9 +197,6 @@ export const TeamControlRoom: React.FC = () => {
                             aria-label={`Connect with ${member.name} on LinkedIn`}
                           >
                             <LinkedinIcon className="w-3 h-3 text-cyan-400" />
-                            <span className="uppercase tracking-wider font-semibold">
-                              MEET {firstName}
-                            </span>
                           </a>
                           {member.github && (
                             <a
@@ -249,7 +245,7 @@ export const TeamControlRoom: React.FC = () => {
                   className="flex flex-wrap justify-center gap-4 sm:gap-5 max-w-4xl mx-auto"
                 >
                   {activeCategory.members.map((member) => {
-                    const firstName = member.name.split(' ')[0];
+                    
                     return (
                       <div
                         key={member.name}
@@ -282,9 +278,6 @@ export const TeamControlRoom: React.FC = () => {
                             aria-label={`Connect with ${member.name} on LinkedIn`}
                           >
                             <LinkedinIcon className="w-3 h-3 text-cyan-400 group-hover/btn:scale-110 transition-transform" />
-                            <span className="uppercase tracking-wider font-semibold">
-                              MEET {firstName}
-                            </span>
                           </a>
                           {member.github && (
                             <a
