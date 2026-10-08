@@ -104,13 +104,13 @@ export const TeamControlRoom: React.FC = () => {
           </div>
 
           {/* Active Department Telemetry and Members View */}
-          <div className="p-3.5 sm:p-10">
-            <div className="flex items-center justify-between mb-3 sm:mb-8 pb-2 sm:pb-4 border-b border-slate-800">
+          <div className="p-3.5 sm:p-6">
+            <div className="flex items-center justify-between mb-3 sm:mb-5 pb-2 sm:pb-3 border-b border-slate-800">
               <div>
-                <div className="font-mono text-[10px] sm:text-xs text-cyan-400 font-bold mb-0.5 sm:mb-1">
+                <div className="font-mono text-[10px] sm:text-xs text-cyan-400 font-bold mb-0.5">
                   DEPARTMENT // {activeCategory.code}
                 </div>
-                <h3 className="font-display font-extrabold text-lg sm:text-3xl text-white">
+                <h3 className="font-display font-extrabold text-lg sm:text-2xl text-white">
                   {activeCategory.name} SQUADRON
                 </h3>
               </div>
@@ -122,7 +122,7 @@ export const TeamControlRoom: React.FC = () => {
 
             {/* MOBILE ONLY: Perfectly Centered Crew Member Console Card */}
             <div className="sm:hidden flex flex-col items-center w-full">
-              <div className="flex items-center justify-between w-full px-1 mb-2.5">
+              <div className="flex items-center justify-between w-full px-1 mb-2">
                 <span className="text-[10px] font-mono text-cyan-300 tracking-wider">
                   CREW MEMBER ({mobileMemberIdx + 1}/{activeCategory.members.length})
                 </span>
@@ -130,7 +130,7 @@ export const TeamControlRoom: React.FC = () => {
                   <button
                     onClick={() => setMobileMemberIdx((prev) => Math.max(0, prev - 1))}
                     disabled={mobileMemberIdx === 0}
-                    className="p-1.5 rounded-lg bg-space-850 border border-slate-700 text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-space-800"
+                    className="p-1 rounded-lg bg-space-850 border border-slate-700 text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-space-800"
                     aria-label="Previous Crew Member"
                   >
                     <ChevronLeft className="w-3.5 h-3.5" />
@@ -138,7 +138,7 @@ export const TeamControlRoom: React.FC = () => {
                   <button
                     onClick={() => setMobileMemberIdx((prev) => Math.min(activeCategory.members.length - 1, prev + 1))}
                     disabled={mobileMemberIdx === activeCategory.members.length - 1}
-                    className="p-1.5 rounded-lg bg-space-850 border border-slate-700 text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-space-800"
+                    className="p-1 rounded-lg bg-space-850 border border-slate-700 text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-space-800"
                     aria-label="Next Crew Member"
                   >
                     <ChevronRight className="w-3.5 h-3.5" />
@@ -168,19 +168,19 @@ export const TeamControlRoom: React.FC = () => {
                             setMobileMemberIdx(mobileMemberIdx - 1);
                           }
                         }}
-                        className="w-full rounded-2xl p-6 bg-space-850/90 border border-slate-700/70 shadow-lg flex flex-col items-center text-center relative"
+                        className="w-full rounded-2xl p-4 bg-space-850/90 border border-slate-700/70 shadow-lg flex flex-col items-center text-center relative"
                       >
                         {/* Social Links */}
-                        <div className="absolute top-3.5 right-3.5 flex items-center gap-1.5 z-10">
+                        <div className="absolute top-3 right-3 flex items-center gap-1 z-10">
                           {member.linkedin && (
                             <a
                               href={member.linkedin}
                               target="_blank"
                               rel="noreferrer"
-                              className="p-1.5 rounded-lg bg-space-900 border border-slate-700 text-slate-300 hover:text-cyan-300 hover:border-cyan-400 transition-colors"
+                              className="p-1 rounded-lg bg-space-900 border border-slate-700 text-slate-300 hover:text-cyan-300 hover:border-cyan-400 transition-colors"
                               aria-label={`${member.name} LinkedIn`}
                             >
-                              <LinkedinIcon className="w-4 h-4" />
+                              <LinkedinIcon className="w-3.5 h-3.5" />
                             </a>
                           )}
                           {member.github && (
@@ -188,28 +188,28 @@ export const TeamControlRoom: React.FC = () => {
                               href={member.github}
                               target="_blank"
                               rel="noreferrer"
-                              className="p-1.5 rounded-lg bg-space-900 border border-slate-700 text-slate-300 hover:text-cyan-300 hover:border-cyan-400 transition-colors"
+                              className="p-1 rounded-lg bg-space-900 border border-slate-700 text-slate-300 hover:text-cyan-300 hover:border-cyan-400 transition-colors"
                               aria-label={`${member.name} GitHub`}
                             >
-                              <GithubIcon className="w-4 h-4" />
+                              <GithubIcon className="w-3.5 h-3.5" />
                             </a>
                           )}
                         </div>
 
-                        {/* Large Avatar Photo */}
-                        <div className="relative mb-3.5 mt-1">
+                        {/* Avatar Photo */}
+                        <div className="relative mb-2.5 mt-0.5">
                           <img
                             src={member.avatar}
                             alt={member.name}
-                            className="w-24 h-24 rounded-2xl object-cover border-2 border-purple-500/40 shadow-lg"
+                            className="w-18 h-18 sm:w-20 sm:h-20 rounded-xl object-cover border-2 border-purple-500/40 shadow-md"
                           />
                         </div>
 
                         {/* Name & Position */}
-                        <h4 className="font-display font-bold text-lg text-white">
+                        <h4 className="font-display font-bold text-base text-white">
                           {member.name}
                         </h4>
-                        <p className="font-sans text-xs text-purple-300 font-medium mt-1">
+                        <p className="font-sans text-xs text-purple-300 font-medium mt-0.5">
                           {member.role}
                         </p>
                       </motion.div>
@@ -219,7 +219,7 @@ export const TeamControlRoom: React.FC = () => {
               </div>
 
               {/* Centered Dot Indicators */}
-              <div className="flex items-center justify-center gap-1.5 mt-3">
+              <div className="flex items-center justify-center gap-1.5 mt-2.5">
                 {activeCategory.members.map((_, idx) => (
                   <button
                     key={idx}
@@ -244,24 +244,24 @@ export const TeamControlRoom: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -15 }}
                   transition={{ duration: 0.25 }}
-                  className="grid grid-cols-2 md:grid-cols-3 gap-6"
+                  className="grid grid-cols-2 md:grid-cols-3 gap-4"
                 >
                   {activeCategory.members.map((member) => (
                     <div
                       key={member.name}
-                      className="p-6 rounded-2xl bg-space-850/80 border border-slate-800 hover:border-cyan-400/50 hover:shadow-[0_12px_35px_rgba(0,0,0,0.5)] transition-all group relative flex flex-col items-center text-center overflow-hidden"
+                      className="p-4 rounded-xl bg-space-850/80 border border-slate-800 hover:border-cyan-400/50 hover:shadow-[0_8px_25px_rgba(0,0,0,0.4)] transition-all group relative flex flex-col items-center text-center overflow-hidden"
                     >
                       {/* Social Links (LinkedIn & GitHub) */}
-                      <div className="absolute top-4 right-4 flex items-center gap-1.5 z-10">
+                      <div className="absolute top-3 right-3 flex items-center gap-1 z-10">
                         {member.linkedin && (
                           <a
                             href={member.linkedin}
                             target="_blank"
                             rel="noreferrer"
-                            className="p-2 rounded-xl bg-space-900/90 border border-slate-700/80 hover:border-cyan-400 text-slate-400 hover:text-cyan-300 transition-all hover:scale-110 shadow-sm"
+                            className="p-1 rounded-lg bg-space-900/90 border border-slate-700/80 hover:border-cyan-400 text-slate-400 hover:text-cyan-300 transition-all hover:scale-105"
                             aria-label={`${member.name} LinkedIn`}
                           >
-                            <LinkedinIcon className="w-4 h-4" />
+                            <LinkedinIcon className="w-3.5 h-3.5" />
                           </a>
                         )}
                         {member.github && (
@@ -269,28 +269,28 @@ export const TeamControlRoom: React.FC = () => {
                             href={member.github}
                             target="_blank"
                             rel="noreferrer"
-                            className="p-2 rounded-xl bg-space-900/90 border border-slate-700/80 hover:border-cyan-400 text-slate-400 hover:text-cyan-300 transition-all hover:scale-110 shadow-sm"
+                            className="p-1 rounded-lg bg-space-900/90 border border-slate-700/80 hover:border-cyan-400 text-slate-400 hover:text-cyan-300 transition-all hover:scale-105"
                             aria-label={`${member.name} GitHub`}
                           >
-                            <GithubIcon className="w-4 h-4" />
+                            <GithubIcon className="w-3.5 h-3.5" />
                           </a>
                         )}
                       </div>
 
-                      {/* Photo: significantly larger */}
-                      <div className="relative mb-4 mt-2">
+                      {/* Photo */}
+                      <div className="relative mb-2.5 mt-0.5">
                         <img
                           src={member.avatar}
                           alt={member.name}
-                          className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-purple-500/30 group-hover:border-cyan-400 group-hover:scale-105 transition-all duration-300 shadow-xl"
+                          className="w-20 h-20 rounded-xl object-cover border-2 border-purple-500/30 group-hover:border-cyan-400 group-hover:scale-105 transition-all duration-300 shadow-md"
                         />
                       </div>
 
                       {/* Name & Position */}
-                      <h4 className="font-display font-bold text-lg sm:text-xl text-white group-hover:text-cyan-300 transition-colors">
+                      <h4 className="font-display font-bold text-base text-white group-hover:text-cyan-300 transition-colors">
                         {member.name}
                       </h4>
-                      <p className="font-sans text-xs sm:text-sm text-purple-300 font-medium mt-1 max-w-[220px]">
+                      <p className="font-sans text-xs text-purple-300 font-medium mt-0.5 max-w-[200px]">
                         {member.role}
                       </p>
                     </div>
