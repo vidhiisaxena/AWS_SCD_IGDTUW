@@ -1,6 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Sparkles, Users } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Cloud, Sparkles, Server, Users, Terminal, CloudLightning, ArrowUpRight, ChevronLeft, ChevronRight, Radio } from 'lucide-react';
+import { sponsorsData } from '../data/eventData';
 
 export const Sponsors: React.FC = () => {
   const communityPartners = [
@@ -158,6 +159,21 @@ export const Sponsors: React.FC = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Become a Partner Callout */}
+          <div className="mt-8 sm:mt-14 inline-flex items-center gap-3 px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl bg-space-900/80 border border-purple-500/30 backdrop-blur max-w-full">
+            <span className="font-mono text-xs text-slate-300 truncate">
+              Want to support the next generation of cloud architects?
+            </span>
+            <a
+              href="mailto:awscloudclubigdtuw@gmail.com"
+              className="font-mono text-xs text-cyan-300 font-bold hover:underline flex items-center gap-1 shrink-0"
+            >
+              <span>PARTNER WITH US</span>
+              <span>→</span>
+            </a>
+          </div>
+
         </div>
 
       </div>
